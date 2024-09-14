@@ -73,7 +73,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} index={true}></Route>
-        <Route path="/aboutMe" element={<AboutMe />}></Route>
+        <Route path="/about" element={<AboutMe />}></Route>
       </Routes>
       <div css={footerStyle}>
         <SocialLinks />

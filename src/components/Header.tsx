@@ -47,8 +47,8 @@ export function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/aboutMe" css={pathname === '/aboutMe' && activeLink}>
-                About me
+              <Link to="/about" css={pathname === '/about' && activeLink}>
+                About
               </Link>
             </li>
           </ul>

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "deploy": "yarn build && gh-pages -d public -b main --repo https://github.com/joephela/joephela.github.io.git",
+    "deploy": "yarn build && gh-pages -d dist -b main --repo https://github.com/joephela/joephela.github.io.git",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
