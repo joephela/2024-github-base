@@ -35,6 +35,10 @@ const globalStyles = css`
     text-align: center;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   body {
     --bg-color: white;
     --fg-color: black;

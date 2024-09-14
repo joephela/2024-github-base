@@ -91,9 +91,9 @@ export function AboutMe() {
         }
         right={
           <p>
-            Today I work as a senior software engineer at Widen an aquia company
-            specializing in front end. I have a wonderful wife and 2 boys that I
-            enjoy spending as much time with as possible.
+            Today I work as a staff software engineer at Aquia specializing in
+            front end. I have a wonderful wife and 2 boys that I enjoy spending
+            as much time with as possible.
           </p>
         }
       />
