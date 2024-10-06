@@ -10,12 +10,14 @@ const headingStyles = css`
 `
 
 const headerWrapperStyle = css`
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
+  border-bottom: 1px solid var(--fg-color);
 `
 
 const headingRightSideStyle = css`
@@ -30,7 +32,7 @@ const navStyle = css`
 `
 
 const activeLink = css`
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid purple;
 `
 
 export function Header() {
@@ -57,7 +59,8 @@ export function Header() {
           onClick={() => {
             swapTheme()
           }}
-          aria-label="toggle theme"
+          aria-label="Toggle theme"
+          title="Toggle theme"
         >
           <Light fill={'var(--fg-color)'} />
         </button>

@@ -5,6 +5,8 @@ import { Outlet } from 'react-router-dom'
 
 const footerStyle = css`
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 `
 
 const mainStyle = css`
@@ -12,9 +14,6 @@ const mainStyle = css`
   height: 100vh;
   color: var(--fg-color);
   background-color: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 
   button {
@@ -25,10 +24,8 @@ const mainStyle = css`
 
 const globalStyles = css`
   p {
-    margin: 20px;
-    margin-bottom: 48px;
-    font-size: larger;
-    text-align: center;
+    font-size: medium;
+    margin-block: 0;
   }
 
   h2 {

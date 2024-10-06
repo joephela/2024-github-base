@@ -16,14 +16,13 @@ const sectionWrapper = css`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   border: 1px solid var(--fg-color);
   border-radius: 10px;
 `
 
 const sectionElementStyle = css`
   width: 45%;
-  min-width: 200px;
   margin: 20px;
 
   @media screen and (max-width: ${MOBILE_BREAK}) {
