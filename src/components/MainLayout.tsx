@@ -28,10 +28,6 @@ const globalStyles = css`
     margin-block: 0;
   }
 
-  h2 {
-    text-align: center;
-  }
-
   body {
     --bg-color: white;
     --fg-color: black;

@@ -21,7 +21,15 @@ const avatarContainerStyle = css`
   width: 100%;
 
   @media only screen and (max-width: 600px) {
-    justify-content: center;
+    justify-content: start;
+  }
+`
+
+const paragraphStyle = css`
+  max-width: 60%;
+
+  @media only screen and (max-width: 600px) {
+    max-width: 100%;
   }
 `
 
@@ -36,7 +44,7 @@ export function Home() {
 
       <div css={avatarContainerStyle}>
         <Avatar />
-        <p css={{ maxWidth: '60%' }}>
+        <p css={paragraphStyle}>
           Experienced software developer with a decade of expertise in building
           web applications, specializing in front-end development. Passionate
           about modernizing legacy code and collaborating with UX teams to
