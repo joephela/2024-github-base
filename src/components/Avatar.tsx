@@ -7,13 +7,21 @@ const avatarStyle = css`
   border-radius: 35%;
 `
 
+const avatarWrapperStyle = css`
+  @media only screen and (max-width: 600px) {
+    margin: auto;
+  }
+`
+
 export function Avatar() {
   return (
-    <img
-      src={Me}
-      css={avatarStyle}
-      alt="Picture of Joe Phelan"
-      id="joephela-avatar"
-    />
+    <div css={avatarWrapperStyle}>
+      <img
+        src={Me}
+        css={avatarStyle}
+        alt="Picture of Joe Phelan"
+        id="joephela-avatar"
+      />
+    </div>
   )
 }
