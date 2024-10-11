@@ -26,6 +26,8 @@ const avatarContainerStyle = css`
 `
 
 const paragraphStyle = css`
+  display: flex;
+  align-items: center;
   max-width: 60%;
 
   @media only screen and (max-width: 600px) {

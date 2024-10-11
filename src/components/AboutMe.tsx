@@ -2,9 +2,7 @@ import { css } from '@emotion/react'
 import Family from '../assets/family.jpeg'
 import Farm from '../assets/farm.jpeg'
 import Milwaukee from '../assets/milwaukee.jpeg'
-import { Fragment, ReactElement } from 'react'
-
-const MOBILE_BREAK = '920px'
+import { ReactElement } from 'react'
 
 const avatarStyle = css`
   width: 100%;
@@ -16,18 +14,22 @@ const sectionWrapper = css`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 60px;
   border: 1px solid var(--fg-color);
   border-radius: 10px;
+  max-width: 600px;
+  min-width: 200px;
 `
 
 const sectionElementStyle = css`
-  width: 45%;
+  width: 100%;
   margin: 20px;
+`
 
-  @media screen and (max-width: ${MOBILE_BREAK}) {
-    width: 100%;
-  }
+const aboutMeWrapperStyle = css`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
 `
 
 interface sectionProps {
@@ -46,7 +48,7 @@ const Section = function ({ left, right }: sectionProps) {
 
 export function AboutMe() {
   return (
-    <Fragment>
+    <div css={aboutMeWrapperStyle}>
       <Section
         left={
           <img
@@ -96,6 +98,6 @@ export function AboutMe() {
           </p>
         }
       />
-    </Fragment>
+    </div>
   )
 }
