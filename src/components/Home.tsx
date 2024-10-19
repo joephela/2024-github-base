@@ -38,6 +38,13 @@ const paragraphStyle = css`
 const titleStyle = css`
   font-weight: bold;
 `
+const workTitleStyle = css`
+  font-style: italic;
+  padding-inline-start: 8px;
+`
+const workDutyListStyle = css`
+  margin-block-start: 0;
+`
 
 export function Home() {
   return (
@@ -57,35 +64,39 @@ export function Home() {
       <Skills />
 
       <h3>Work</h3>
-      <p css={titleStyle}>Acquia (formerly Widen Enterprises)</p>
-      <p>Staff software engineer</p>
-      <p>2019 - Current</p>
-      <ul>
-        <li>Maintain cross team component library</li>
+
+      <p css={titleStyle}>Acquia</p>
+      <p css={workTitleStyle}>Staff software engineer (2024 - current)</p>
+      <p css={workTitleStyle}>Senior software engineer (2022 - 2024)</p>
+      <p css={workTitleStyle}>
+        Business Systems Software Developer III (2019 - 2022)
+      </p>
+      <ul css={workDutyListStyle}>
+        <li>Maintain cross team component library and documentation</li>
         <li>
-          Keep up to date documentation on best practices and how to use
-          component library
+          Code with a focus of maintainability, A11y standards, and e2e testing
         </li>
         <li>
-          One on one coding sessions and demos of functionality to teach other
-          developers
+          Conduct one-on-one coding sessions and demos to teach and support
+          other developers
         </li>
         <li>
           Ensure applications are up to date on dependencies and
           assist/troubleshoot any blockers
         </li>
-        <li>Meet with UX to iron out designs and patterns</li>
+        <li>Collaborate with UX designers to iron out designs and patterns</li>
         <li>
-          Provide feedback and recommendations in pull requests to ensure other
-          developers are following our company code guidelines
+          Provide constructive feedback and recommendations in pull requests,
+          contributing to the overall code quality and maintainability
         </li>
-        <li>Vet usage of new technologies to use within our stack</li>
+        <li>
+          Vet usage of new libraries to ensure they meet the company standards
+        </li>
       </ul>
 
       <p css={titleStyle}>Nelnet (formerly Great Lakes Higher Education)</p>
-      <p>Senior software engineer</p>
-      <p>2012 - 2019</p>
-      <ul>
+      <p css={workTitleStyle}>Senior software engineer (2012 - 2019)</p>
+      <ul css={workDutyListStyle}>
         <li>
           Responsible for performing analysis, designing, coding, testing, and
           implementation of accurate and efficient web applications
