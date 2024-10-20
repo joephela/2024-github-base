@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import { Link, useLocation } from 'react-router-dom'
 import { Light } from '../assets/Light'
 import { swapTheme } from '../common/theme'
+import Me from '../assets/me.jpeg'
 
 const headingStyles = css`
   margin: 0;
@@ -18,6 +19,8 @@ const headerWrapperStyle = css`
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid var(--fg-color);
+  padding: 8px;
+  border-radius: 4px;
 `
 
 const headingRightSideStyle = css`
@@ -40,11 +43,30 @@ const activeLink = css`
   border-bottom: 1px solid purple;
 `
 
+const avatarStyle = css`
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+`
+const imageHeaderStyle = css`
+  display: flex;
+  gap: 8px;
+`
+
 export function Header() {
   const { pathname } = useLocation()
   return (
     <div css={headerWrapperStyle}>
-      <h1 css={headingStyles}>Joseph D. Phelan</h1>
+      <div css={imageHeaderStyle}>
+        <img
+          src={Me}
+          css={avatarStyle}
+          alt="Picture of Joe Phelan"
+          id="joephela-avatar"
+        />
+
+        <h2 css={headingStyles}>Joseph D. Phelan</h2>
+      </div>
       <div css={headingRightSideStyle}>
         <nav>
           <ul css={navStyle}>

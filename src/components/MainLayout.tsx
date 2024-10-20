@@ -25,7 +25,6 @@ const mainStyle = css`
 const globalStyles = css`
   p {
     font-size: medium;
-    margin-block: 0;
   }
 
   body {

@@ -11,24 +11,28 @@ const homeContainerStyle = css`
   li {
     list-style: circle;
   }
+
+  p {
+    margin-block: 0;
+  }
 `
 
 const avatarContainerStyle = css`
   gap: 16px;
   flex-direction: row;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
 
   @media only screen and (max-width: 600px) {
     justify-content: start;
+    flex-wrap: wrap;
   }
 `
 
 const paragraphStyle = css`
   display: flex;
   align-items: center;
-  max-width: 60%;
+  max-width: 42em;
 
   @media only screen and (max-width: 600px) {
     max-width: 100%;
@@ -49,7 +53,7 @@ const workDutyListStyle = css`
 export function Home() {
   return (
     <div css={homeContainerStyle}>
-      <h2>Staff Software Engineer at Acquia</h2>
+      <h1>Staff Software Engineer at Acquia</h1>
 
       <div css={avatarContainerStyle}>
         <Avatar />
