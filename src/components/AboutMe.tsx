@@ -41,11 +41,10 @@ export function AboutMe() {
         <p>
           From my humble beginnings working on my fathers farm I learned the
           value of hard work. I developed an interest in all things technology
-          after spending time with our family DOS computer. This lead to me
+          after spending time with our family DOS computer. This led to me
           attending the University of Wisconsin Milwaukee in pursuit of a
           bachelors degree in computer science. Once acquired I moved to Madison
-          WI and began my professional career which I break down on the home
-          page.
+          WI and began my professional career.
         </p>
         <p>
           Today I work as a staff software engineer at{' '}
@@ -53,7 +52,7 @@ export function AboutMe() {
           specializing in front end. I have a wonderful wife and 2 boys that I
           enjoy spending as much time with as possible. When I'm not working I
           enjoy biking, listening to podcasts and audio books, playing video
-          games, and reading books.
+          games, reading books, fishing, and gardening.
         </p>
         <p>
           Going forward I want to continue making a difference on teams.
