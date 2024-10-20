@@ -44,11 +44,6 @@ const globalStyles = css`
   li {
     text-decoration: none;
   }
-
-  a {
-    text-decoration: none;
-    color: var(--fg-color);
-  }
 `
 
 export function MainLayout() {

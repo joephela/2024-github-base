@@ -67,10 +67,6 @@ export function Home() {
 
       <p css={titleStyle}>Acquia</p>
       <p css={workTitleStyle}>Staff software engineer (2024 - current)</p>
-      <p css={workTitleStyle}>Senior software engineer (2022 - 2024)</p>
-      <p css={workTitleStyle}>
-        Business Systems Software Developer III (2019 - 2022)
-      </p>
       <ul css={workDutyListStyle}>
         <li>Maintain cross team component library and documentation</li>
         <li>
@@ -93,7 +89,39 @@ export function Home() {
           Vet usage of new libraries to ensure they meet the company standards
         </li>
       </ul>
-
+      <p css={workTitleStyle}>Senior software engineer (2022 - 2024)</p>
+      <ul css={workDutyListStyle}>
+        <li>Develop cross application component library</li>
+        <li>
+          Create smart components (micro frontend w/module federation) for use
+          throughout product teams
+        </li>
+        <li>Support maintain and document software functionality</li>
+        <li>
+          Communicate new releases and features to product development teams
+        </li>
+      </ul>
+      <p css={workTitleStyle}>
+        Business Systems Software Developer III (2019 - 2022)
+      </p>
+      <ul css={workDutyListStyle}>
+        <li>
+          Support a java/react web application and add new features as needed
+        </li>
+        <li>
+          Design, develop and test business solutions primarily on the
+          Salesforce platform using apex, visualforce, lightning web components,
+          flows, and process builders
+        </li>
+        <li>
+          Communicate with team members and colleagues to gather user
+          requirements and keep up to date with integration changes
+        </li>
+        <li>
+          Make changes on hubspot website, including custom hubl components and
+          ADA compliance
+        </li>
+      </ul>
       <p css={titleStyle}>Nelnet (formerly Great Lakes Higher Education)</p>
       <p css={workTitleStyle}>Senior software engineer (2012 - 2019)</p>
       <ul css={workDutyListStyle}>

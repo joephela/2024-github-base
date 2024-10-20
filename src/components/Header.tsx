@@ -31,6 +31,11 @@ const navStyle = css`
   padding: 0px;
 `
 
+const linkStyle = css`
+  text-decoration: none;
+  color: var(--fg-color);
+`
+
 const activeLink = css`
   border-bottom: 1px solid purple;
 `
@@ -44,12 +49,15 @@ export function Header() {
         <nav>
           <ul css={navStyle}>
             <li>
-              <Link to="/" css={pathname === '/' && activeLink}>
+              <Link to="/" css={[linkStyle, pathname === '/' && activeLink]}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" css={pathname === '/about' && activeLink}>
+              <Link
+                to="/about"
+                css={[linkStyle, pathname === '/about' && activeLink]}
+              >
                 About
               </Link>
             </li>
