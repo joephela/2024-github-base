@@ -33,6 +33,7 @@ const paragraphStyle = css`
   display: flex;
   align-items: center;
   max-width: 42em;
+  font-size: large;
 
   @media only screen and (max-width: 600px) {
     max-width: 100%;

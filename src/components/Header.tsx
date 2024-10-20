@@ -57,12 +57,14 @@ export function Header() {
   return (
     <div css={headerWrapperStyle}>
       <div css={imageHeaderStyle}>
-        <img
-          src={Me}
-          css={avatarStyle}
-          alt="Picture of Joe Phelan"
-          id="joephela-avatar"
-        />
+        <Link to="/">
+          <img
+            src={Me}
+            css={avatarStyle}
+            alt="Picture of Joe Phelan"
+            id="joephela-avatar"
+          />
+        </Link>
 
         <h2 css={headingStyles}>Joseph D. Phelan</h2>
       </div>

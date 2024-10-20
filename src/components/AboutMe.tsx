@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import Family from '../assets/family.jpeg'
+import Family from '../assets/family.jpg'
 
 const avatarStyle = css`
   width: 100%;
@@ -21,6 +21,11 @@ const aboutMeWrapperStyle = css`
 `
 
 const imageWrapperStyle = css`
+  margin-inline: auto;
+  margin-block-start: 27px;
+`
+
+const textWrapperStyle = css`
   max-width: 42em;
 
   p:first-child {
@@ -31,7 +36,7 @@ const imageWrapperStyle = css`
 export function AboutMe() {
   return (
     <div css={aboutMeWrapperStyle}>
-      <div css={imageWrapperStyle}>
+      <div css={textWrapperStyle}>
         <h1>About</h1>
         <p>
           From my humble beginnings working on my fathers farm I learned the
@@ -44,7 +49,7 @@ export function AboutMe() {
         </p>
         <p>
           Today I work as a staff software engineer at{' '}
-          <a href="https://www.acquia.com/products/acquia-dam">Aquia</a>{' '}
+          <a href="https://www.acquia.com/products/acquia-dam">Acquia</a>{' '}
           specializing in front end. I have a wonderful wife and 2 boys that I
           enjoy spending as much time with as possible. When I'm not working I
           enjoy biking, listening to podcasts and audio books, playing video
@@ -57,12 +62,14 @@ export function AboutMe() {
           on to make a difference in this world.
         </p>
       </div>
-      <img
-        loading="lazy"
-        src={Family}
-        css={avatarStyle}
-        alt="Picture of my family"
-      />
+      <div css={imageWrapperStyle}>
+        <img
+          loading="lazy"
+          src={Family}
+          css={avatarStyle}
+          alt="Picture of my family"
+        />
+      </div>
     </div>
   )
 }
