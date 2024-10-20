@@ -20,7 +20,6 @@ const headerWrapperStyle = css`
   gap: 10px;
   border-bottom: 1px solid var(--fg-color);
   padding: 8px;
-  border-radius: 4px;
 `
 
 const headingRightSideStyle = css`

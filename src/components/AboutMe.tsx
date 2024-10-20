@@ -6,7 +6,7 @@ const avatarStyle = css`
   display: block;
   height: auto;
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 400px;
 `
 
 const aboutMeWrapperStyle = css`
