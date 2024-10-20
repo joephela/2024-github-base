@@ -29,8 +29,11 @@ const globalStyles = css`
   }
 
   body {
-    --bg-color: white;
-    --fg-color: black;
+    --color-black: #171717;
+    --color-white: #f8f9f9;
+    --bg-color: var(--color-white);
+    --fg-color: var(--color-black);
+
     margin: 0;
     padding: 10px 50px;
     color: var(--fg-color);

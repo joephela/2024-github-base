@@ -3,8 +3,8 @@ export function setTheme() {
     typeof window !== 'undefined' &&
     window.localStorage.getItem('theme') === 'dark'
   ) {
-    document.body.style.setProperty('--fg-color', 'white')
-    document.body.style.setProperty('--bg-color', 'black')
+    document.body.style.setProperty('--fg-color', 'var(--color-white)')
+    document.body.style.setProperty('--bg-color', 'var(--color-black)')
   }
 }
 
@@ -22,6 +22,6 @@ export function swapTheme() {
   typeof window !== 'undefined' &&
     window.localStorage.setItem(
       'theme',
-      currentBg === 'black' ? 'light' : 'dark',
+      currentBg === '#171717' ? 'dark' : 'light',
     )
 }

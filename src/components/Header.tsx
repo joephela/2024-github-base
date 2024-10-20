@@ -36,6 +36,10 @@ const navStyle = css`
 const linkStyle = css`
   text-decoration: none;
   color: var(--fg-color);
+
+  :hover {
+    text-shadow: var(--fg-color) 0px 0 2px;
+  }
 `
 
 const activeLink = css`
@@ -72,7 +76,11 @@ export function Header() {
         <nav>
           <ul css={navStyle}>
             <li>
-              <Link to="/" css={[linkStyle, pathname === '/' && activeLink]}>
+              <Link
+                to="/"
+                css={[linkStyle, pathname === '/' && activeLink]}
+                aria-current={pathname === '/' ? 'page' : undefined}
+              >
                 Home
               </Link>
             </li>
@@ -80,6 +88,7 @@ export function Header() {
               <Link
                 to="/about"
                 css={[linkStyle, pathname === '/about' && activeLink]}
+                aria-current={pathname === '/about' ? 'page' : undefined}
               >
                 About
               </Link>
