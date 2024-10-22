@@ -16,12 +16,14 @@ export function swapTheme() {
     '--fg-color',
   )
 
+  const currentTheme = window.localStorage.getItem('theme')
+
   document.body.style.setProperty('--fg-color', currentBg)
   document.body.style.setProperty('--bg-color', currentFg)
 
   typeof window !== 'undefined' &&
     window.localStorage.setItem(
       'theme',
-      currentBg === '#171717' ? 'dark' : 'light',
+      currentTheme === 'light' ? 'dark' : 'light',
     )
 }

@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import { Github } from '../assets/Github'
 import { Linkedin } from '../assets/Linkedin'
+import { ButtonLink } from './Button'
 
 const SocialLinksContainer = css`
   display: flex;
@@ -14,12 +15,22 @@ const GITHUB_URL = 'https://github.com/joephela'
 export function SocialLinks() {
   return (
     <div css={SocialLinksContainer}>
-      <a href={GITHUB_URL} target="_blank">
+      <ButtonLink
+        as="a"
+        aria-label="View Joe Phelan's Github"
+        target="_blank"
+        href={GITHUB_URL}
+      >
         <Github fill={'var(--fg-color)'} />
-      </a>
-      <a href={LINKEDIN_URL} target="_blank">
+      </ButtonLink>
+      <ButtonLink
+        as="a"
+        aria-label="View Joe Phelan's Linkedin"
+        href={LINKEDIN_URL}
+        target="_blank"
+      >
         <Linkedin fill={'var(--fg-color)'} />
-      </a>
+      </ButtonLink>
     </div>
   )
 }

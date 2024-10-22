@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom'
 import { Light } from '../assets/Light'
 import { swapTheme } from '../common/theme'
 import Me from '../assets/me.jpeg'
+import { Button } from './Button'
 
 const headingStyles = css`
   margin: 0;
   max-width: 320px;
-  font-variant: petite-caps;
+  font-size: 1.2em;
+  font-weight: bold;
 `
 
 const headerWrapperStyle = css`
@@ -25,6 +27,7 @@ const headerWrapperStyle = css`
 const headingRightSideStyle = css`
   display: flex;
   gap: 20px;
+  align-items: center;
 `
 
 const navStyle = css`
@@ -43,7 +46,7 @@ const linkStyle = css`
 `
 
 const activeLink = css`
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid var(--color-accent-fg);
 `
 
 const avatarStyle = css`
@@ -53,13 +56,14 @@ const avatarStyle = css`
 `
 const imageHeaderStyle = css`
   display: flex;
+  align-items: center;
   gap: 8px;
 `
 
 export function Header() {
   const { pathname } = useLocation()
   return (
-    <div css={headerWrapperStyle}>
+    <header css={headerWrapperStyle}>
       <div css={imageHeaderStyle}>
         <Link to="/">
           <img
@@ -70,7 +74,7 @@ export function Header() {
           />
         </Link>
 
-        <h2 css={headingStyles}>Joseph D. Phelan</h2>
+        <span css={headingStyles}>Joseph D. Phelan</span>
       </div>
       <div css={headingRightSideStyle}>
         <nav>
@@ -95,7 +99,7 @@ export function Header() {
             </li>
           </ul>
         </nav>
-        <button
+        <Button
           onClick={() => {
             swapTheme()
           }}
@@ -103,8 +107,8 @@ export function Header() {
           title="Toggle theme"
         >
           <Light fill={'var(--fg-color)'} />
-        </button>
+        </Button>
       </div>
-    </div>
+    </header>
   )
 }

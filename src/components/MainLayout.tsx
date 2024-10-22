@@ -2,6 +2,7 @@ import { css, Global } from '@emotion/react'
 import { Header } from './Header'
 import { SocialLinks } from './SocialLinks'
 import { Outlet } from 'react-router-dom'
+import { Fragment } from 'react'
 
 const footerStyle = css`
   margin-top: 50px;
@@ -11,26 +12,16 @@ const footerStyle = css`
 
 const mainStyle = css`
   width: 100%;
-  height: 100vh;
-  color: var(--fg-color);
-  background-color: var(--bg-color);
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-
-  button {
-    border: none;
-    background: unset;
-  }
+  height: 100%;
 `
 
 const globalStyles = css`
-  p {
-    font-size: medium;
-    line-height: 1.4em;
-  }
-
   body {
     --color-black: #171717;
     --color-white: #f8f9f9;
+    --color-accent-bg: #54787840;
+    --color-accent-fg: #577e7d;
+
     --bg-color: var(--color-white);
     --fg-color: var(--color-black);
 
@@ -38,6 +29,14 @@ const globalStyles = css`
     padding: 10px 50px;
     color: var(--fg-color);
     background-color: var(--bg-color);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+
+    p {
+      font-size: medium;
+      line-height: 1.4em;
+    }
   }
 
   ul {
@@ -51,13 +50,15 @@ const globalStyles = css`
 
 export function MainLayout() {
   return (
-    <main css={mainStyle}>
+    <Fragment>
       <Global styles={globalStyles} />
       <Header />
-      <Outlet />
-      <div css={footerStyle}>
+      <main css={mainStyle}>
+        <Outlet />
+      </main>
+      <footer css={footerStyle}>
         <SocialLinks />
-      </div>
-    </main>
+      </footer>
+    </Fragment>
   )
 }
