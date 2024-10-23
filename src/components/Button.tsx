@@ -10,13 +10,13 @@ const buttonStyles = css`
   :hover,
   :focus {
     svg {
-      fill: var(--color-accent-fg);
+      fill: var(--bg-accent);
     }
   }
 
   :active {
     svg {
-      opacity: 70%;
+      opacity: 80%;
     }
   }
 `

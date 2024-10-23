@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
+import { MOBILE_BREAKPOINT } from '../common/theme'
 
 const avatarStyle = css`
   width: 100%;
@@ -15,7 +16,7 @@ const aboutMeWrapperStyle = css`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto 1fr;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `

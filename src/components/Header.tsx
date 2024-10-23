@@ -14,14 +14,14 @@ const headingStyles = css`
 
 const headerWrapperStyle = css`
   margin-bottom: 40px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid var(--fg-color);
-  padding: 8px;
+  padding-inline: var(--layout-padding);
+  padding-block-start: 16px;
 `
 
 const headingRightSideStyle = css`
@@ -40,13 +40,14 @@ const linkStyle = css`
   text-decoration: none;
   color: var(--fg-color);
 
-  :hover {
-    text-shadow: var(--fg-color) 0px 0 2px;
+  :hover,
+  :focus {
+    text-shadow: var(--bg-accent) 0px 0 1px;
   }
 `
 
 const activeLink = css`
-  border-bottom: 1px solid var(--color-accent-fg);
+  border-bottom: 1px solid var(--bg-accent);
 `
 
 const avatarStyle = css`

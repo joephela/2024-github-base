@@ -1,6 +1,8 @@
 import { css } from '@emotion/react'
-import { Avatar } from './Avatar'
-import { Skills } from './Skills'
+import { Avatar } from '../components/Avatar'
+import { Skills } from '../components/Skills'
+import { offscreenStyle } from '../common/sharedStyles'
+import { MOBILE_BREAKPOINT } from '../common/theme'
 
 const homeContainerStyle = css`
   display: flex;
@@ -23,7 +25,7 @@ const avatarContainerStyle = css`
   display: flex;
   width: 100%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     justify-content: start;
     flex-wrap: wrap;
   }
@@ -35,7 +37,7 @@ const paragraphStyle = css`
   max-width: 42em;
   font-size: large;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     max-width: 100%;
   }
 `
@@ -54,7 +56,7 @@ const workDutyListStyle = css`
 export function Home() {
   return (
     <div css={homeContainerStyle}>
-      <h1>Staff Software Engineer at Acquia</h1>
+      <h1 css={offscreenStyle}>Home page for Joseph Phelan</h1>
 
       <div css={avatarContainerStyle}>
         <Avatar />

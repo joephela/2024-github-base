@@ -18,6 +18,7 @@ export function Skills() {
         <Pill text="React" />
         <Pill text="CSS" />
         <Pill text="HTML" />
+        <Pill text="A11Y" />
         <Pill text="Jest" />
         <Pill text="Playwright" />
         <Pill text="Emotion" />

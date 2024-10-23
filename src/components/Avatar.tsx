@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
 import Me from '../assets/me.jpeg'
+import { MOBILE_BREAKPOINT } from '../common/theme'
 
 const avatarStyle = css`
   height: 200px;
@@ -8,7 +9,7 @@ const avatarStyle = css`
 `
 
 const avatarWrapperStyle = css`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     margin: auto;
   }
 `

@@ -1,11 +1,12 @@
 import { css } from '@emotion/react'
 
 const pillContainerStyle = css`
-  background-color: var(--color-accent-bg);
+  background-color: var(--bg-accent);
   border-radius: 24px;
   padding-inline: 8px;
   text-align: center;
-  color: var(--fg-color);
+  color: var(--fg-accent);
+  padding-block: 4px;
 `
 
 export function Pill({ text }: PillProps) {

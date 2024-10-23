@@ -1,32 +1,20 @@
 import { css, Global } from '@emotion/react'
-import { Header } from './Header'
-import { SocialLinks } from './SocialLinks'
+import { Header } from './components/Header'
 import { Outlet } from 'react-router-dom'
 import { Fragment } from 'react'
-
-const footerStyle = css`
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-`
+import { Themes } from './common/theme'
+import { Footer } from './Footer'
 
 const mainStyle = css`
-  width: 100%;
   height: 100%;
+  margin-inline: var(--layout-padding);
 `
 
 const globalStyles = css`
   body {
-    --color-black: #171717;
-    --color-white: #f8f9f9;
-    --color-accent-bg: #54787840;
-    --color-accent-fg: #577e7d;
-
-    --bg-color: var(--color-white);
-    --fg-color: var(--color-black);
-
+    ${Themes}
+    overflow-x:hidden;
     margin: 0;
-    padding: 10px 50px;
     color: var(--fg-color);
     background-color: var(--bg-color);
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -56,9 +44,7 @@ export function MainLayout() {
       <main css={mainStyle}>
         <Outlet />
       </main>
-      <footer css={footerStyle}>
-        <SocialLinks />
-      </footer>
+      <Footer />
     </Fragment>
   )
 }
