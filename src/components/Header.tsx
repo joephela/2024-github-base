@@ -12,6 +12,7 @@ const headingStyles = css`
   max-width: 320px;
   font-size: 1.2em;
   font-weight: bold;
+  font-variant: petite-caps;
 `
 
 const headerWrapperStyle = css`
