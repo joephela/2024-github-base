@@ -1,24 +1,15 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { focusMixin } from '../common/sharedStyles'
 
 const buttonStyles = css`
   border: none;
-  background: unset;
   cursor: pointer;
   height: fit-content;
+  background: unset;
+  color: var(--fg-color);
 
-  :hover,
-  :focus {
-    svg {
-      fill: var(--bg-accent);
-    }
-  }
-
-  :active {
-    svg {
-      opacity: 80%;
-    }
-  }
+  ${focusMixin}
 `
 
 export const Button = styled.button`

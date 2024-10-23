@@ -1,9 +1,11 @@
 import { css } from '@emotion/react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Light } from '../assets/Light'
-import { swapTheme } from '../common/theme'
+import { MOBILE_BREAKPOINT, swapTheme } from '../common/theme'
 import Me from '../assets/me.jpeg'
 import { Button } from './Button'
+import { Nav } from './Nav'
+import { Menu } from './Menu'
 
 const headingStyles = css`
   margin: 0;
@@ -29,28 +31,13 @@ const headingRightSideStyle = css`
   display: flex;
   gap: 20px;
   align-items: center;
-`
 
-const navStyle = css`
-  display: flex;
-  gap: 20px;
-  padding: 0px;
-`
-
-const linkStyle = css`
-  && {
-    text-decoration: none;
-    color: var(--fg-color);
-
-    :hover,
-    :focus {
-      text-shadow: var(--bg-accent) 0px 0 1px;
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    && {
+      background: red;
+      display: none;
     }
   }
-`
-
-const activeLink = css`
-  border-bottom: 1px solid var(--bg-accent);
 `
 
 const avatarStyle = css`
@@ -64,8 +51,23 @@ const imageHeaderStyle = css`
   gap: 8px;
 `
 
+const menuButtonStyle = css`
+  display: none;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    display: block;
+  }
+`
+
+const fullSizeNavStyle = css`
+  display: flex;
+
+  @media only screen (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
+`
+
 export function Header() {
-  const { pathname } = useLocation()
   return (
     <header css={headerWrapperStyle}>
       <div css={imageHeaderStyle}>
@@ -80,38 +82,22 @@ export function Header() {
 
         <span css={headingStyles}>Joseph D. Phelan</span>
       </div>
-      <div css={headingRightSideStyle}>
-        <nav>
-          <ul css={navStyle}>
-            <li>
-              <Link
-                to="/"
-                css={[linkStyle, pathname === '/' && activeLink]}
-                aria-current={pathname === '/' ? 'page' : undefined}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                css={[linkStyle, pathname === '/about' && activeLink]}
-                aria-current={pathname === '/about' ? 'page' : undefined}
-              >
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <Button
-          onClick={() => {
-            swapTheme()
-          }}
-          aria-label="Toggle theme"
-          title="Toggle theme"
-        >
-          <Light fill={'var(--fg-color)'} />
-        </Button>
+      <div>
+        <div css={menuButtonStyle}>
+          <Menu />
+        </div>
+        <div css={headingRightSideStyle}>
+          <Nav />
+          <Button
+            onClick={() => {
+              swapTheme()
+            }}
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <Light fill={'var(--fg-color)'} />
+          </Button>
+        </div>
       </div>
     </header>
   )
