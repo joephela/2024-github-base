@@ -28,9 +28,10 @@ export const Themes = css`
   --fg-accent: var(--color-white);
   --bg-color: var(--color-white);
   --fg-color: var(--color-black);
+  --bg-footer-header: #d9dee1;
 
   a {
-    color: var(--bg-accent);
+    color: blue;
   }
 
   &.dark {
@@ -38,6 +39,11 @@ export const Themes = css`
     --fg-color: var(--color-white);
     --bg-accent: var(--color-light-blue);
     --fg-accent: var(--color-black);
+    --bg-footer-header: darkslategray;
+
+    a {
+      color: darkturquoise;
+    }
   }
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {

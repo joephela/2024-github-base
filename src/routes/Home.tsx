@@ -3,6 +3,7 @@ import { Avatar } from '../components/Avatar'
 import { Skills } from '../components/Skills'
 import { offscreenStyle } from '../common/sharedStyles'
 import { MOBILE_BREAKPOINT } from '../common/theme'
+import { Helmet } from 'react-helmet'
 
 const homeContainerStyle = css`
   display: flex;
@@ -54,18 +55,22 @@ const workDutyListStyle = css`
 `
 
 export function Home() {
+  const description = `Experienced software developer with a decade of expertise in building
+          web applications, specializing in front-end development. Passionate
+          about modernizing legacy code and collaborating with UX teams to
+          design new innovative features.`
+
   return (
     <div css={homeContainerStyle}>
+      <Helmet>
+        <meta name="description" content={description} />
+        <title>Joseph D. Phelan</title>
+      </Helmet>
       <h1 css={offscreenStyle}>Home page for Joseph Phelan</h1>
 
       <div css={avatarContainerStyle}>
         <Avatar />
-        <p css={paragraphStyle}>
-          Experienced software developer with a decade of expertise in building
-          web applications, specializing in front-end development. Passionate
-          about modernizing legacy code and collaborating with UX teams to
-          design new innovative features.
-        </p>
+        <p css={paragraphStyle}>{description}</p>
       </div>
 
       <Skills />

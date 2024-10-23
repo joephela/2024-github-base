@@ -13,6 +13,7 @@ const headingStyles = css`
 `
 
 const headerWrapperStyle = css`
+  background: var(--bg-footer-header);
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -21,7 +22,7 @@ const headerWrapperStyle = css`
   gap: 10px;
   border-bottom: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
-  padding-block-start: 16px;
+  padding-block: 16px;
 `
 
 const headingRightSideStyle = css`
@@ -37,12 +38,14 @@ const navStyle = css`
 `
 
 const linkStyle = css`
-  text-decoration: none;
-  color: var(--fg-color);
+  && {
+    text-decoration: none;
+    color: var(--fg-color);
 
-  :hover,
-  :focus {
-    text-shadow: var(--bg-accent) 0px 0 1px;
+    :hover,
+    :focus {
+      text-shadow: var(--bg-accent) 0px 0 1px;
+    }
   }
 `
 

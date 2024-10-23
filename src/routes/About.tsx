@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
 import { MOBILE_BREAKPOINT } from '../common/theme'
+import { Helmet } from 'react-helmet'
 
 const avatarStyle = css`
   width: 100%;
@@ -37,6 +38,13 @@ const textWrapperStyle = css`
 export function AboutMe() {
   return (
     <div css={aboutMeWrapperStyle}>
+      <Helmet>
+        <meta
+          name="description"
+          content="Learn about me and how I got started on my path to becoming a software engineer."
+        />
+        <title>About - Joseph D. Phelan</title>
+      </Helmet>
       <div css={textWrapperStyle}>
         <h1>About</h1>
         <p>

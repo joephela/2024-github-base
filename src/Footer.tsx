@@ -2,12 +2,14 @@ import { css } from '@emotion/react'
 import { SocialLinks } from './components/SocialLinks'
 
 const footerStyle = css`
+  background: var(--bg-footer-header);
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
   border-top: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
   align-items: center;
+  padding-block: 8px;
 `
 
 const footerTextStyle = css`
