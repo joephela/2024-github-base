@@ -59,14 +59,6 @@ const menuButtonStyle = css`
   }
 `
 
-const fullSizeNavStyle = css`
-  display: flex;
-
-  @media only screen (max-width: ${MOBILE_BREAKPOINT}) {
-    display: none;
-  }
-`
-
 export function Header() {
   return (
     <header css={headerWrapperStyle}>
