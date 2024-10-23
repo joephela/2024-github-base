@@ -7,6 +7,7 @@ const footerStyle = css`
   justify-content: space-between;
   border-top: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
+  align-items: center;
 `
 
 const footerTextStyle = css`
@@ -17,11 +18,12 @@ export function Footer() {
   return (
     <footer css={footerStyle}>
       <p css={footerTextStyle}>
-        Copyright © 2024 Joseph Phelan. Built by me using{' '}
+        Built by me using{' '}
         <a href="https://vite.dev/" rel="noreferrer" target="_blank">
           Vite
         </a>
-        .
+        .<br />
+        Copyright © 2024 Joseph Phelan.
       </p>
       <SocialLinks />
     </footer>

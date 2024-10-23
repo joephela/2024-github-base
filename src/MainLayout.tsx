@@ -13,7 +13,6 @@ const mainStyle = css`
 const globalStyles = css`
   body {
     ${Themes}
-    overflow-x:hidden;
     margin: 0;
     color: var(--fg-color);
     background-color: var(--bg-color);
