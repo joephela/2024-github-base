@@ -1,9 +1,10 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { Button } from './Button'
 import { MenuIcon } from '../assets/MenuIcon'
 import { Nav } from './Nav'
 import { css } from '@emotion/react'
 import { useLocation } from 'react-router-dom'
+import { CloseIcon } from '../assets/CloseIcon'
 
 const hiddenStyle = css`
   display: none;
@@ -37,6 +38,7 @@ const closeButtonStyle = css`
 export function Menu() {
   const [isOpen, setIsOpen] = useState(false)
   const { pathname } = useLocation()
+  const ref = useRef<HTMLButtonElement>(null)
 
   //whenever we navigate, close the menu
   useEffect(() => {
@@ -50,6 +52,10 @@ export function Menu() {
         aria-controls="menu"
         onClick={() => {
           setIsOpen(!isOpen)
+          // focus close button after delay
+          setTimeout(() => {
+            ref.current?.focus()
+          }, 50)
         }}
         aria-label="Open nav menu"
       >
@@ -66,13 +72,14 @@ export function Menu() {
         }}
       >
         <Button
+          ref={ref}
           onClick={() => {
             setIsOpen(false)
           }}
           aria-label="close nav menu"
           css={closeButtonStyle}
         >
-          X
+          <CloseIcon />
         </Button>
         <Nav />
       </div>

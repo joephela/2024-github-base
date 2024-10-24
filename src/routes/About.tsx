@@ -49,8 +49,8 @@ export function AboutMe() {
         <h1>About</h1>
         <p>
           From my humble beginnings working on my fathers farm I learned the
-          value of hard work. I developed an interest in all things technology
-          after spending time with our family DOS computer. This led to me
+          value of hard work. After spending time with our family DOS computer,
+          I developed an interest in all things technology. This led to me
           attending the University of Wisconsin Milwaukee in pursuit of a
           bachelors degree in computer science. Once acquired I moved to Madison
           WI and began my professional career.
