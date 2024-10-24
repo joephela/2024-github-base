@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
 import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
+import { centerMixin } from '../common/sharedStyles'
 
 const avatarStyle = css`
   width: 100%;
@@ -12,6 +13,7 @@ const avatarStyle = css`
 `
 
 const aboutMeWrapperStyle = css`
+  ${centerMixin}
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(2, minmax(0, 1fr));

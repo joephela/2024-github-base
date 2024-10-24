@@ -4,6 +4,7 @@ import { AboutMe } from './routes/About'
 import { useLayoutEffect } from 'react'
 import { setTheme, Theme } from './common/theme'
 import { MainLayout } from './MainLayout'
+import { Tech } from './routes/Tech'
 
 function App() {
   useLayoutEffect(() => {
@@ -16,6 +17,7 @@ function App() {
       <Route element={<MainLayout />}>
         <Route path="/" index element={<Home />} />
         <Route path="/about" element={<AboutMe />} />
+        <Route path="/tech" element={<Tech />} />
       </Route>
     </Routes>
   )

@@ -1,11 +1,12 @@
 import { css } from '@emotion/react'
 import { Avatar } from '../components/Avatar'
 import { Skills } from '../components/Skills'
-import { offscreenStyle } from '../common/sharedStyles'
+import { centerMixin, offscreenStyle } from '../common/sharedStyles'
 import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
 
 const homeContainerStyle = css`
+  ${centerMixin}
   display: flex;
   gap: 8px;
   flex-direction: column;

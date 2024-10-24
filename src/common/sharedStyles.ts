@@ -6,6 +6,12 @@ export const offscreenStyle = css`
   left: -10000px;
 `
 
+export const centerMixin = css`
+  max-width: 53em;
+  margin-left: auto;
+  margin-right: auto;
+`
+
 export const focusMixin = css`
   :hover,
   :focus {
