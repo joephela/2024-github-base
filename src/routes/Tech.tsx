@@ -27,6 +27,7 @@ const cardsWrapperStyle = css`
   gap: 24px;
   flex-wrap: wrap;
   margin-block-start: 40px;
+  justify-content: center;
 `
 
 const cardStyle = css`
