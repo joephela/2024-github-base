@@ -2,7 +2,8 @@ import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
 import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
-import { centerMixin } from '../common/sharedStyles'
+import { centerMixin, transitionMixin } from '../common/sharedStyles'
+import { useFadeTransition } from '../hooks/useFadeTransition'
 
 const avatarStyle = css`
   width: 100%;
@@ -13,6 +14,7 @@ const avatarStyle = css`
 `
 
 const aboutMeWrapperStyle = css`
+  ${transitionMixin}
   ${centerMixin}
   display: grid;
   gap: 24px;
@@ -38,8 +40,10 @@ const textWrapperStyle = css`
 `
 
 export function AboutMe() {
+  const { ref } = useFadeTransition()
+
   return (
-    <div css={aboutMeWrapperStyle}>
+    <div css={aboutMeWrapperStyle} ref={ref}>
       <Helmet>
         <meta
           name="description"

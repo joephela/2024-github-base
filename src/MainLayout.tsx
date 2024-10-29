@@ -43,11 +43,11 @@ const globalStyles = css`
 export function MainLayout() {
   return (
     <Fragment>
+      <Global styles={globalStyles} />
       {document.location.origin === 'https://joephela.github.io' ? (
         <Moved />
       ) : (
         <Fragment>
-          <Global styles={globalStyles} />
           <Header />
           <main css={mainStyle}>
             <Outlet />

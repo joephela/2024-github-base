@@ -12,6 +12,19 @@ export const centerMixin = css`
   margin-right: auto;
 `
 
+export const transitionMixin = css`
+  opacity: 0;
+  transition: opacity 0.2s linear;
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
+  }
+
+  &.transitioned {
+    opacity: 1;
+  }
+`
+
 export const focusMixin = css`
   :hover,
   :focus {

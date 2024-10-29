@@ -1,11 +1,17 @@
 import { css } from '@emotion/react'
 import { Avatar } from '../components/Avatar'
 import { Skills } from '../components/Skills'
-import { centerMixin, offscreenStyle } from '../common/sharedStyles'
+import {
+  centerMixin,
+  offscreenStyle,
+  transitionMixin,
+} from '../common/sharedStyles'
 import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
+import { useFadeTransition } from '../hooks/useFadeTransition'
 
 const homeContainerStyle = css`
+  ${transitionMixin}
   ${centerMixin}
   display: flex;
   gap: 8px;
@@ -56,13 +62,14 @@ const workDutyListStyle = css`
 `
 
 export function Home() {
+  const { ref } = useFadeTransition()
   const description = `Experienced software developer with a decade of expertise in building
           web applications, specializing in front-end development. Passionate
           about modernizing legacy code and collaborating with UX teams to
           design new innovative features.`
 
   return (
-    <div css={homeContainerStyle}>
+    <div css={homeContainerStyle} ref={ref}>
       <Helmet>
         <meta name="description" content={description} />
         <title>Joseph D. Phelan</title>

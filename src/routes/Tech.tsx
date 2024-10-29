@@ -1,7 +1,11 @@
 import { css } from '@emotion/react'
 import { ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
-import { centerMixin, focusMixin } from '../common/sharedStyles'
+import {
+  centerMixin,
+  focusMixin,
+  transitionMixin,
+} from '../common/sharedStyles'
 import { ReactIcon } from '../assets/ReactIcon'
 import { TypescriptIcon } from '../assets/TypescriptIcon'
 import { GitIcon } from '../assets/GitIcon'
@@ -17,8 +21,10 @@ import { GithubIcon } from '../assets/GithubIcon'
 import { PlaywrightIcon } from '../assets/PlaywrightIcon'
 import { EmotionIcon } from '../assets/EmotionIcon'
 import { JestIcon } from '../assets/JestIcon'
+import { useFadeTransition } from '../hooks/useFadeTransition'
 
 const techWrapperStyle = css`
+  ${transitionMixin}
   ${centerMixin}
 `
 
@@ -64,8 +70,10 @@ interface CardProps {
 }
 
 export function Tech() {
+  const { ref } = useFadeTransition()
+
   return (
-    <div css={techWrapperStyle}>
+    <div css={techWrapperStyle} ref={ref}>
       <Helmet>
         <meta
           name="description"

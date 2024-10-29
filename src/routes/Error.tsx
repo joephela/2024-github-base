@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 import { ErrorIcon } from '../assets/ErrorIcon'
 import { css } from '@emotion/react'
+import { useFadeTransition } from '../hooks/useFadeTransition'
+import { transitionMixin } from '../common/sharedStyles'
+
+const errorWrapperStyle = css`
+  ${transitionMixin}
+`
 
 const headerStyle = css`
   display: flex;
@@ -9,8 +15,10 @@ const headerStyle = css`
 `
 
 export function Error() {
+  const { ref } = useFadeTransition()
+
   return (
-    <div>
+    <div css={errorWrapperStyle} ref={ref}>
       <h1 css={headerStyle}>
         <ErrorIcon />
         Path not found
