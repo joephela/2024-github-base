@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './routes/Home'
 import { AboutMe } from './routes/About'
 import { useLayoutEffect } from 'react'
@@ -8,11 +8,10 @@ import { Tech } from './routes/Tech'
 import { Error } from './routes/Error'
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: '/',
       element: <MainLayout />,
-      errorElement: <Error />,
       children: [
         {
           path: '/',
