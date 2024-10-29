@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { Fragment } from 'react'
 import { Themes } from './common/theme'
 import { Footer } from './Footer'
+import { Moved } from './components/Moved'
 
 const FOOTER_HEIGHT = '128px'
 const HEADER_HEIGHT = '123px'
@@ -42,12 +43,18 @@ const globalStyles = css`
 export function MainLayout() {
   return (
     <Fragment>
-      <Global styles={globalStyles} />
-      <Header />
-      <main css={mainStyle}>
-        <Outlet />
-      </main>
-      <Footer />
+      {document.location.origin === 'https://joephela.github.io' ? (
+        <Moved />
+      ) : (
+        <Fragment>
+          <Global styles={globalStyles} />
+          <Header />
+          <main css={mainStyle}>
+            <Outlet />
+          </main>
+          <Footer />
+        </Fragment>
+      )}
     </Fragment>
   )
 }
