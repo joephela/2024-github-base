@@ -5,9 +5,13 @@ import { Fragment } from 'react'
 import { Themes } from './common/theme'
 import { Footer } from './Footer'
 
+const FOOTER_HEIGHT = '128px'
+const HEADER_HEIGHT = '123px'
+
 const mainStyle = css`
   height: 100%;
   margin-inline: var(--layout-padding);
+  min-height: calc(100vh - ${FOOTER_HEIGHT} - ${HEADER_HEIGHT});
 `
 
 const globalStyles = css`
