@@ -12,6 +12,7 @@ function App() {
     {
       path: '/',
       element: <MainLayout />,
+      errorElement: <Error />,
       children: [
         {
           path: '/',
@@ -27,7 +28,7 @@ function App() {
           Component: Tech,
         },
         {
-          path: '/*',
+          path: '*',
           Component: Error,
         },
       ],
