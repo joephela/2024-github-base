@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   }
 
   if (command !== 'serve') {
-    config.base = 'https://joephela.com'
+    config.base = 'https://www.joephela.com/'
   }
 
   return config
