@@ -4,12 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   const config = {
-    base: '/',
+    base: 'https://www.joephela.com',
     plugins: [react()],
   }
 
-  if (command !== 'serve') {
-    config.base = 'https://www.joephela.com/'
+  if (command === 'serve') {
+    config.base = '/'
   }
 
   return config
