@@ -27,7 +27,7 @@ function App() {
           Component: Tech,
         },
         {
-          path: '*',
+          path: '/*',
           Component: Error,
         },
       ],
