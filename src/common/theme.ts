@@ -30,6 +30,8 @@ export const Themes = css`
   --bg-color: var(--color-white);
   --fg-color: var(--color-black);
   --bg-footer-header: #d9dee1;
+  --z-index-modal: 15;
+  --z-index-popover: 10;
 
   a {
     color: blue;
