@@ -16,6 +16,9 @@ const mainStyle = css`
 `
 
 const globalStyles = css`
+  --z-index-modal: 15;
+  --z-index-popover: 10;
+
   body {
     ${Themes}
     margin: 0;

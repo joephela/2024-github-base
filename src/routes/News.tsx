@@ -58,7 +58,7 @@ export function News() {
     position: sticky;
     flex-wrap: wrap;
     top: 0;
-    z-index: 10;
+    z-index: var(--z-index-popover);
     background: var(--bg-color);
     width: 100vw;
 
