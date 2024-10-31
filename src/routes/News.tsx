@@ -208,7 +208,9 @@ export function News() {
           {articlesResponse.count === 0 ? (
             <p>No results found.</p>
           ) : (
-            articlesResponse.results.map((props) => <Article {...props} />)
+            articlesResponse.results.map((props) => (
+              <Article key={props.id} {...props} />
+            ))
           )}
         </div>
       ) : null}

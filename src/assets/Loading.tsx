@@ -6,7 +6,7 @@ export function Loading() {
         cy="50"
         r="35"
         stroke="var(--bg-accent)"
-        stroke-width="8"
+        strokeWidth="8"
         fill="none"
       />
 
@@ -15,10 +15,10 @@ export function Loading() {
         cy="50"
         r="35"
         stroke="currentColor"
-        stroke-width="8"
+        strokeWidth="8"
         fill="none"
-        stroke-dasharray="220"
-        stroke-dashoffset="0"
+        strokeDasharray="220"
+        strokeDashoffset="0"
       >
         <animateTransform
           attributeName="transform"
@@ -43,7 +43,7 @@ export function Loading() {
           cy="15"
           r="10"
           stroke="var(--bg-accent)"
-          stroke-width="3"
+          strokeWidth="3"
           fill="none"
         >
           <animate
@@ -60,8 +60,8 @@ export function Loading() {
           x2="30"
           y2="30"
           stroke="var(--bg-accent)"
-          stroke-width="3"
-          stroke-linecap="round"
+          strokeWidth="3"
+          strokeLinecap="round"
         >
           <animate
             attributeName="opacity"

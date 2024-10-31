@@ -24,6 +24,7 @@ const globalStyles = css`
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: var(--fg-color);
     background-color: var(--bg-color);
+    overflow-x: hidden;
 
     p {
       font-size: medium;

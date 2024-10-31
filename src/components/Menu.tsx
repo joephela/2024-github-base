@@ -11,8 +11,8 @@ const hiddenStyle = css`
 `
 
 const menuStyle = css`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: inherit;
   top: 0;
   position: fixed;
