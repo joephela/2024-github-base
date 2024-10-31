@@ -10,6 +10,10 @@ const buttonStyles = css`
   color: var(--fg-color);
 
   ${focusMixin}
+
+  :disabled {
+    color: gray;
+  }
 `
 
 export const Button = styled.button`

@@ -6,8 +6,11 @@ import { setTheme, Theme } from './common/theme'
 import { MainLayout } from './MainLayout'
 import { Tech } from './routes/Tech'
 import { Error } from './routes/Error'
+import { News } from './routes/News'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 function App() {
+  const queryClient = new QueryClient()
   const router = createBrowserRouter([
     {
       path: '/',
@@ -26,6 +29,7 @@ function App() {
           path: '/tech',
           Component: Tech,
         },
+        { path: '/news', Component: News },
         {
           path: '*',
           Component: Error,
@@ -39,7 +43,11 @@ function App() {
       setTheme(window.localStorage.getItem('theme') as Theme)
   }, [])
 
-  return <RouterProvider router={router} />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  )
 }
 
 export default App

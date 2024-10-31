@@ -67,6 +67,15 @@ export function Nav() {
             Tech
           </Link>
         </li>
+        <li>
+          <Link
+            to="/news"
+            css={[linkStyle, pathname === '/news' && activeLink]}
+            aria-current={pathname === '/news' ? 'page' : undefined}
+          >
+            News
+          </Link>
+        </li>
         <li css={mobileToggleStyle}>
           <Button
             onClick={() => {
