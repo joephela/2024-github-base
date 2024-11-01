@@ -6,10 +6,17 @@ const articleStyle = css`
   display: flex;
   gap: 16px;
   width: 90%;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 16px;
 
   h3 {
     padding: 0;
     margin: 0;
+  }
+
+  p {
+    margin-block-end: 0;
   }
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
@@ -56,6 +63,10 @@ export function Article({
           src={image_url}
           loading="lazy"
           aria-label={`relating to ${title}`}
+          onError={(props) => {
+            //@ts-expect-error there is a src
+            props.target.src = '/image-not-found.svg'
+          }}
         />
       </div>
       <div>

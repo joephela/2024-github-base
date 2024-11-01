@@ -42,7 +42,7 @@ export function News() {
   const searchResultsWrapperStyle = css`
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 24px;
     padding-block: 24px;
   `
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="currentColor"/>
+  
+  <!-- Broken Image Icon -->
+  <rect x="50" y="50" width="100" height="100" fill="#e0e0e0" stroke="#888" stroke-width="3"/>
+  
+  <!-- Crossed Out Symbol -->
+  <line x1="40" y1="160" x2="160" y2="40" stroke="#ff4136" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Text -->
+  <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    Image Not Found
+  </text>
+</svg>
