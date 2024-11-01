@@ -7,8 +7,8 @@ import { getArticles } from '../api/spaceflightnews'
 import { useQuery } from '@tanstack/react-query'
 import { Button } from '../components/Button'
 import { Loading } from '../assets/Loading'
-import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Article } from '../components/Article'
+import { Paginator } from '../components/Paginator'
 
 const newsWrapperStyle = css`
   ${transitionMixin}
@@ -43,31 +43,7 @@ export function News() {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    padding-block: 24px;
-  `
-
-  const arrowButtonStyle = css`
-    font-size: large;
-    padding-inline: 8px;
-  `
-
-  const paginatorStyle = css`
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    position: sticky;
-    flex-wrap: wrap;
-    top: 0;
-    z-index: var(--z-index-popover);
-    background: var(--bg-color);
-    width: 100%;
-
-    @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
-      && {
-        gap: 8px;
-        padding: 8px;
-      }
-    }
+    padding-block: 8px;
   `
 
   const inputStyle = css`
@@ -91,8 +67,6 @@ export function News() {
       max-width: 300px;
     }
   `
-
-  const upperRange = offset + limit
 
   const searchFormStyle = css`
     padding-block: 16px;
@@ -148,57 +122,12 @@ export function News() {
           }}
         />
       </div>
-      <div css={paginatorStyle}>
-        <p>Total: {articlesResponse ? articlesResponse.count : 'loading'}</p>
-        <div>
-          <Button
-            css={arrowButtonStyle}
-            disabled={offset === 0}
-            aria-label="First Page"
-            title="First Page"
-            onClick={() => {
-              setOffset(0)
-            }}
-          >{`<<`}</Button>
-          <Button
-            css={arrowButtonStyle}
-            disabled={offset === 0}
-            aria-label="Previous page"
-            title="Previous page"
-            onClick={() => {
-              if (offset - limit > 0) {
-                setOffset(offset - limit)
-              } else {
-                setOffset(0)
-              }
-            }}
-          >{`<`}</Button>
-          Showing:{' '}
-          {`${offset + 1} - ${upperRange > (articlesResponse?.count ?? upperRange) ? (articlesResponse?.count ?? upperRange) : upperRange}`}
-          <Button
-            disabled={
-              !articlesResponse || limit + offset >= articlesResponse.count
-            }
-            onClick={() => {
-              setOffset(offset + limit)
-            }}
-            css={arrowButtonStyle}
-            aria-label="Next page"
-            title="Next page"
-          >{`>`}</Button>
-          <Button
-            disabled={
-              !articlesResponse || offset === articlesResponse.count - limit
-            }
-            onClick={() => {
-              setOffset(articlesResponse!.count - limit)
-            }}
-            css={arrowButtonStyle}
-            aria-label="Last page"
-            title="Last page"
-          >{`>>`}</Button>
-        </div>
-      </div>
+      <Paginator
+        articlesResponse={articlesResponse}
+        limit={limit}
+        offset={offset}
+        setOffset={setOffset}
+      />
       {isFetching || isLoading ? (
         <div css={loadingWrapperStyle}>
           <Loading />
@@ -214,6 +143,12 @@ export function News() {
           )}
         </div>
       ) : null}
+      <Paginator
+        articlesResponse={articlesResponse}
+        limit={limit}
+        offset={offset}
+        setOffset={setOffset}
+      />
     </div>
   )
 }
