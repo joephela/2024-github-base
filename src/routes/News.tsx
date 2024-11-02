@@ -106,7 +106,7 @@ export function News() {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   })
-
+  console.log(articlesResponse)
   function onUrlChange({
     offset,
     search,
@@ -190,14 +190,16 @@ export function News() {
           Reset
         </Button>
       </div>
-      <Paginator articlesResponse={articlesResponse} />
+      {articlesResponse?.results.length ? (
+        <Paginator articlesResponse={articlesResponse} />
+      ) : null}
       {isFetching || isLoading ? (
         <div css={loadingWrapperStyle}>
           <Loading />
         </div>
       ) : articlesResponse ? (
         <div css={searchResultsWrapperStyle}>
-          {articlesResponse.count === 0 ? (
+          {articlesResponse.results.length === 0 ? (
             <p>No results found.</p>
           ) : (
             articlesResponse.results.map((props) => (
@@ -206,7 +208,9 @@ export function News() {
           )}
         </div>
       ) : null}
-      <Paginator articlesResponse={articlesResponse} />
+      {articlesResponse?.results.length ? (
+        <Paginator articlesResponse={articlesResponse} />
+      ) : null}
     </div>
   )
 }
