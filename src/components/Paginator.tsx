@@ -1,23 +1,26 @@
 import { css } from '@emotion/react'
 import { MOBILE_BREAKPOINT } from '../common/theme'
-import { Button } from './Button'
+import { borderedButton, Button } from './Button'
 import { getArticlesResponse } from '../api/spaceflightnews'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const arrowButtonStyle = css`
-  font-size: large;
+  ${borderedButton}
+  font-size: medium;
   padding-inline: 8px;
+  min-width: 40px;
 `
 
 const paginatorStyle = css`
   display: flex;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   top: 0;
   z-index: var(--z-index-popover);
   background: var(--bg-color);
-  width: 100%;
+  max-width: 100%;
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     && {
@@ -27,48 +30,63 @@ const paginatorStyle = css`
   }
 `
 
-export function Paginator({
-  articlesResponse,
-  offset,
-  limit,
-  setOffset,
-}: PaginatorProps) {
-  const upperRange = offset + limit
+const paginatorButtonsWrapperStyle = css`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+`
+
+export function Paginator({ articlesResponse }: PaginatorProps) {
+  let [searchParams, setSearchParams] = useSearchParams()
+  const limit = searchParams.get('limit')
+  const offset = searchParams.get('offset')
+  const offsetInt = offset ? parseInt(offset) : 0
+  const limitInt = limit ? parseInt(limit) : 25
+  const upperRange = offsetInt + limitInt
+  const navigate = useNavigate()
 
   return (
     <div css={paginatorStyle}>
-      <p>Total: {articlesResponse ? articlesResponse.count : 'loading'}</p>
-      <div>
+      <p>
+        Total:{' '}
+        {articlesResponse ? articlesResponse.count.toLocaleString() : 'loading'}{' '}
+        results
+      </p>
+      <div css={paginatorButtonsWrapperStyle}>
         <Button
           css={arrowButtonStyle}
-          disabled={offset === 0}
+          disabled={offsetInt === 0}
           aria-label="First Page"
           title="First Page"
           onClick={() => {
-            setOffset(0)
+            searchParams.set('offset', '0')
+            setSearchParams(searchParams)
           }}
         >{`<<`}</Button>
         <Button
           css={arrowButtonStyle}
-          disabled={offset === 0}
+          disabled={offsetInt === 0}
           aria-label="Previous page"
           title="Previous page"
           onClick={() => {
-            if (offset - limit > 0) {
-              setOffset(offset - limit)
+            if (offsetInt - limitInt > 0) {
+              searchParams.set('offset', `${offsetInt - limitInt}`)
+              navigate(`/news?${searchParams.toString()}`)
             } else {
-              setOffset(0)
+              searchParams.set('offset', '0')
+              navigate(`/news?${searchParams.toString()}`)
             }
           }}
         >{`<`}</Button>
         Showing:{' '}
-        {`${offset + 1} - ${upperRange > (articlesResponse?.count ?? upperRange) ? (articlesResponse?.count ?? upperRange) : upperRange}`}
+        {`${offsetInt + 1} - ${upperRange > (articlesResponse?.count ?? upperRange) ? (articlesResponse?.count ?? upperRange) : upperRange}`}
         <Button
           disabled={
-            !articlesResponse || limit + offset >= articlesResponse.count
+            !articlesResponse || limitInt + offsetInt >= articlesResponse.count
           }
           onClick={() => {
-            setOffset(offset + limit)
+            searchParams.set('offset', `${offsetInt + limitInt}`)
+            navigate(`/news?${searchParams.toString()}`)
           }}
           css={arrowButtonStyle}
           aria-label="Next page"
@@ -76,10 +94,11 @@ export function Paginator({
         >{`>`}</Button>
         <Button
           disabled={
-            !articlesResponse || offset === articlesResponse.count - limit
+            !articlesResponse || offsetInt === articlesResponse.count - limitInt
           }
           onClick={() => {
-            setOffset(articlesResponse!.count - limit)
+            searchParams.set('offset', `${articlesResponse!.count - limitInt}`)
+            navigate(`/news?${searchParams.toString()}`)
           }}
           css={arrowButtonStyle}
           aria-label="Last page"
@@ -92,7 +111,4 @@ export function Paginator({
 
 export interface PaginatorProps {
   articlesResponse: getArticlesResponse | undefined
-  offset: number
-  limit: number
-  setOffset(offset: number): void
 }

@@ -1,31 +1,95 @@
 import { css } from '@emotion/react'
 import { centerMixin, transitionMixin } from '../common/sharedStyles'
 import { useFadeTransition } from '../hooks/useFadeTransition'
-import { useState } from 'react'
+import { RefObject, useRef, useState } from 'react'
 import { Select } from '../components/Select'
 import { getArticles } from '../api/spaceflightnews'
 import { useQuery } from '@tanstack/react-query'
-import { Button } from '../components/Button'
+import { borderedButton, Button } from '../components/Button'
 import { Loading } from '../assets/Loading'
 import { Article } from '../components/Article'
 import { Paginator } from '../components/Paginator'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { SearchIcon } from '../assets/SearchIcon'
 
 const newsWrapperStyle = css`
   ${transitionMixin}
   ${centerMixin}
 `
 
+const searchResultsWrapperStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-block: 8px;
+`
+
+const inputStyle = css`
+  height: 32px;
+  width: 200px;
+  border: 1px solid var(--fg-color);
+  border-radius: 4px 0 0 4px;
+  color: var(--fg-color);
+  background: var(--bg-color);
+  padding-inline: 8px;
+`
+
+const searchStyle = css`
+  ${borderedButton}
+  height: 36px;
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+`
+
+const loadingWrapperStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    max-width: 300px;
+  }
+`
+
+const searchFormStyle = css`
+  display: flex;
+  padding-block: 16px;
+`
+
+const searchFormWrapperStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+`
+
+const selectStyle = css`
+  border: 1px solid var(--fg-color);
+  border-radius: 4px;
+  background: unset;
+  height: 36px;
+  font-size: medium;
+  cursor: pointer;
+  color: var(--fg-color);
+  padding-inline: 8px;
+`
+
 export function News() {
   const { ref } = useFadeTransition()
-  const [limit, setLimit] = useState(25)
-  const [offset, setOffset] = useState(0)
+  const navigate = useNavigate()
+  const [params, setParams] = useSearchParams()
+  const offset = params.get('offset')
+  const limit = params.get('limit')
+  const search = params.get('search')
+  const offsetInt = offset ? parseInt(offset) : 0
+  const limitInt = limit ? parseInt(limit) : 25
   const [searchInput, setSearchInput] = useState('')
-  const [search, setSearch] = useState('')
   const limitOptions = [
     { label: '25', value: '25' },
     { label: '50', value: '50' },
     { label: '100', value: '100' },
   ]
+  const inputRef = useRef<HTMLInputElement>(null)
   const {
     data: articlesResponse,
     isFetching,
@@ -33,50 +97,31 @@ export function News() {
   } = useQuery({
     queryKey: ['articles', search, limit, offset],
     queryFn: () => {
-      return getArticles({ limit, offset, search })
+      return getArticles({
+        limit: limitInt,
+        offset: offsetInt,
+        search: search ?? '',
+      })
     },
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   })
 
-  const searchResultsWrapperStyle = css`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding-block: 8px;
-  `
-
-  const inputStyle = css`
-    height: 1em;
-    width: 100px;
-  `
-
-  const searchStyle = css`
-    border: 1px solid;
-    border-radius: 4px;
-    padding-inline: 8px;
-    margin-inline-start: 4px;
-  `
-
-  const loadingWrapperStyle = css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      max-width: 300px;
-    }
-  `
-
-  const searchFormStyle = css`
-    padding-block: 16px;
-  `
-
-  const searchFormWrapperStyle = css`
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  `
+  function onUrlChange({
+    offset,
+    search,
+    limit,
+  }: {
+    offset: number
+    search: string
+    limit: number
+  }) {
+    const params = new URLSearchParams()
+    params.append('offset', offset.toString())
+    params.append('search', search)
+    params.append('limit', limit.toString())
+    navigate(`/news?${params.toString()}`)
+  }
 
   return (
     <div css={newsWrapperStyle} ref={ref}>
@@ -96,38 +141,56 @@ export function News() {
           css={searchFormStyle}
           onSubmit={(e) => {
             e.preventDefault()
-            setSearch(searchInput)
-            setOffset(0)
+            onUrlChange({
+              limit: limitInt,
+              offset: 0,
+              search: searchInput,
+            })
           }}
         >
           <input
+            ref={inputRef}
             id="news-search"
             type="text"
             aria-label="search news"
             css={inputStyle}
+            placeholder="Search articles..."
             onChange={(event) => {
               setSearchInput(event.target.value)
             }}
           ></input>
-          <Button type="submit" css={searchStyle}>
-            Search
+          <Button type="submit" css={searchStyle} aria-label="perform search">
+            <SearchIcon />
           </Button>
         </form>
         <Select
           label="Limit"
           hideLabel={true}
+          css={selectStyle}
           options={limitOptions}
           onChange={({ target }) => {
-            setLimit(parseInt(target.value))
+            onUrlChange({
+              limit: parseInt(target.value),
+              offset: offsetInt,
+              search: search ?? '',
+            })
           }}
         />
+
+        <Button
+          css={borderedButton}
+          onClick={() => {
+            setParams()
+
+            if (inputRef.current) {
+              inputRef.current.value = ''
+            }
+          }}
+        >
+          Reset
+        </Button>
       </div>
-      <Paginator
-        articlesResponse={articlesResponse}
-        limit={limit}
-        offset={offset}
-        setOffset={setOffset}
-      />
+      <Paginator articlesResponse={articlesResponse} />
       {isFetching || isLoading ? (
         <div css={loadingWrapperStyle}>
           <Loading />
@@ -143,12 +206,7 @@ export function News() {
           )}
         </div>
       ) : null}
-      <Paginator
-        articlesResponse={articlesResponse}
-        limit={limit}
-        offset={offset}
-        setOffset={setOffset}
-      />
+      <Paginator articlesResponse={articlesResponse} />
     </div>
   )
 }
