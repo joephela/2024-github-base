@@ -4,7 +4,7 @@ import { focusMixin } from '../common/sharedStyles'
 
 export const borderedButton = css`
   height: 36px;
-  border: 1px solid;
+  border: 1px solid var(--fg-color);
   border-radius: 4px;
   padding-inline: 8px;
 `
