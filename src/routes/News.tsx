@@ -11,6 +11,7 @@ import { Article } from '../components/Article'
 import { Paginator } from '../components/Paginator'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SearchIcon } from '../assets/SearchIcon'
+import { MOBILE_BREAKPOINT } from '../common/theme'
 
 const newsWrapperStyle = css`
   ${transitionMixin}
@@ -32,13 +33,18 @@ const inputStyle = css`
   color: var(--fg-color);
   background: var(--bg-color);
   padding-inline: 8px;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    && {
+      width: 100px;
+    }
+  }
 `
 
 const searchStyle = css`
   ${borderedButton}
   height: 36px;
   border-radius: 0 4px 4px 0;
-  border-left: 0;
 `
 
 const loadingWrapperStyle = css`
@@ -106,7 +112,6 @@ export function News() {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   })
-  console.log(articlesResponse)
   function onUrlChange({
     offset,
     search,
