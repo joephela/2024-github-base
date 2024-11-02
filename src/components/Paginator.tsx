@@ -48,7 +48,6 @@ export function Paginator({ articlesResponse }: PaginatorProps) {
   return (
     <div css={paginatorStyle}>
       <p>
-        Total:{' '}
         {articlesResponse ? articlesResponse.count.toLocaleString() : 'loading'}{' '}
         results
       </p>

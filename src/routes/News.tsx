@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import { centerMixin, transitionMixin } from '../common/sharedStyles'
 import { useFadeTransition } from '../hooks/useFadeTransition'
-import { RefObject, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Select } from '../components/Select'
 import { getArticles } from '../api/spaceflightnews'
 import { useQuery } from '@tanstack/react-query'
