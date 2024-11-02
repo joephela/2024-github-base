@@ -26,7 +26,7 @@ const searchResultsWrapperStyle = css`
 `
 
 const inputStyle = css`
-  height: 32px;
+  height: 36px;
   width: 200px;
   border: 1px solid var(--fg-color);
   border-radius: 4px 0 0 4px;
@@ -34,10 +34,11 @@ const inputStyle = css`
   background: var(--bg-color);
   padding-inline: 8px;
   border-right: 0;
+  box-sizing: border-box;
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     && {
-      width: 100px;
+      width: 124px;
     }
   }
 `
@@ -47,6 +48,7 @@ const searchStyle = css`
   height: 36px;
   border-radius: 0 4px 4px 0;
   border-left: 0;
+  box-sizing: border-box;
 `
 
 const loadingWrapperStyle = css`
