@@ -105,7 +105,6 @@ export function News() {
     isFetching,
     isLoading,
   } = useQuery({
-    queryKey: ['articles', search, limit, offset],
     queryFn: () => {
       return getArticles({
         limit: limitInt,
@@ -113,6 +112,7 @@ export function News() {
         search: search ?? '',
       })
     },
+    queryKey: ['articles', search, limit, offset],
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   })

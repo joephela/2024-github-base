@@ -13,34 +13,35 @@ function App() {
   const queryClient = new QueryClient()
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <MainLayout />,
       children: [
         {
-          path: '/',
           Component: Home,
           index: true,
+          path: '/',
         },
         {
-          path: '/about',
           Component: AboutMe,
+          path: '/about',
         },
         {
-          path: '/tech',
           Component: Tech,
+          path: '/tech',
         },
-        { path: '/news', Component: News },
+        { Component: News, path: '/news' },
         {
-          path: '*',
           Component: Error,
+          path: '*',
         },
       ],
+      element: <MainLayout />,
+      path: '/',
     },
   ])
 
   useLayoutEffect(() => {
-    typeof window !== 'undefined' &&
+    if (typeof window !== 'undefined') {
       setTheme(window.localStorage.getItem('theme') as Theme)
+    }
   }, [])
 
   return (

@@ -37,7 +37,7 @@ const paginatorButtonsWrapperStyle = css`
 `
 
 export function Paginator({ articlesResponse }: PaginatorProps) {
-  let [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
   const limit = searchParams.get('limit')
   const offset = searchParams.get('offset')
   const offsetInt = offset ? parseInt(offset) : 0

@@ -3,11 +3,12 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import sortKeysFix from 'eslint-plugin-sort-keys-fix'
 
 export default tseslint.config(
   { ignores: ['dist'] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, "prettier"],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -16,6 +17,7 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'sort-keys-fix': sortKeysFix,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -23,6 +25,9 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'sort-keys-fix/sort-keys-fix': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'react-refresh/only-export-components': 'off',
     },
   },
 )

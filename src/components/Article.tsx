@@ -57,7 +57,7 @@ export function Article({
   summary,
   title,
   url,
-}: ArticleProps) {
+}: searchArticle) {
   return (
     <div css={articleStyle} key={id}>
       <div css={imageWrapperStyle}>
@@ -84,5 +84,3 @@ export function Article({
     </div>
   )
 }
-
-export interface ArticleProps extends searchArticle {}
