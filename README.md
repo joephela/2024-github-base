@@ -6,7 +6,13 @@ Base portfolio codebase that deploys to both joephela.com and joephela.github.io
 
 1.  **Make changes**
 
-2.  **Test changes**
+2.  **Pull down dependencies**
+
+    ```shell
+    yarn
+    ```
+
+3.  **Test changes**
 
     Navigate into your new site’s directory and start it up.
 
@@ -16,7 +22,7 @@ Base portfolio codebase that deploys to both joephela.com and joephela.github.io
 
     Your site is now running at http://localhost:5173/!
 
-3.  **Deploy updates**
+4.  **Deploy updates**
 
     Running deploy will run the build and ensure eslint passes.
 

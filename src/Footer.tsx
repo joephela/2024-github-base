@@ -12,21 +12,31 @@ const footerStyle = css`
   padding-block: 8px;
 `
 
-const footerTextStyle = css`
-  font-size: small;
+const footerTextWrapperStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 8px;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 `
 
 export function Footer() {
   return (
     <footer css={footerStyle}>
-      <p css={footerTextStyle}>
-        Built by me using{' '}
-        <a href="https://vite.dev/" rel="noreferrer" target="_blank">
-          Vite
+      <div css={footerTextWrapperStyle}>
+        <a
+          href="https://github.com/joephela/2024-github-base"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Check out the code!
         </a>
-        .<br />
-        Copyright © 2024 Joseph Phelan.
-      </p>
+        <p>Copyright © 2024 Joseph Phelan.</p>
+      </div>
       <SocialLinks />
     </footer>
   )

@@ -86,7 +86,14 @@ export function Tech() {
       <h1>Technology</h1>
       <p>
         A collection of technologies used in the process of making this website
-        and in my day to day work.
+        and in my day to day work.{' '}
+        <a
+          href="https://github.com/joephela/2024-github-base"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Check out the code!
+        </a>
       </p>
       <p>
         My preferred stack includes working in typescript and react with some
