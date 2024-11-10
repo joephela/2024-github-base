@@ -13,12 +13,14 @@ const footerStyle = css`
 `
 
 const footerTextWrapperStyle = css`
+  font-size: small;
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding-block: 8px;
 
   p {
+    font-size: small;
     margin: 0;
     padding: 0;
   }
