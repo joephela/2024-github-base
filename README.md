@@ -1,6 +1,6 @@
-<h1 align="center">
-  Joephela.github.io Base
-</h1>
+# Joephela.github.io Base
+
+Base portfolio codebase that deploys to both joephela.com and joephela.github.io.
 
 ## 🚀 Quick start
 
@@ -18,6 +18,12 @@
 
 3.  **Deploy updates**
 
+    Running deploy will run the build and ensure eslint passes.
+
     ```shell
     yarn deploy
     ```
+
+## License
+
+Feel free to take inspiration, but dont copy things 1:1. A shoutout would be nice.
