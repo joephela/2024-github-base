@@ -9,6 +9,7 @@ import {
 import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
 import { useFadeTransition } from '../hooks/useFadeTransition'
+import { Link } from 'react-router-dom'
 
 const homeContainerStyle = css`
   ${transitionMixin}
@@ -82,6 +83,12 @@ export function Home() {
       </div>
 
       <Skills />
+
+      <h3>Projects</h3>
+      <a href="https://www.infillify.com">
+        Infillify - AI image editor/generator
+      </a>
+      <Link to="/news">News search</Link>
 
       <h3>Work</h3>
 
