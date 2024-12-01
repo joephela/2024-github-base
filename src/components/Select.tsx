@@ -9,6 +9,11 @@ const selectWrapperStyle = css`
   select {
     width: fit-content;
   }
+
+  option {
+    background: var(--bg-color);
+    color: var(--fg-color);
+  }
 `
 
 export function Select({

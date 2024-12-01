@@ -7,6 +7,11 @@ export const borderedButton = css`
   border: 1px solid var(--fg-color);
   border-radius: 4px;
   padding-inline: 8px;
+
+  :disabled {
+    color: gray;
+    border-color: gray;
+  }
 `
 
 const buttonStyles = css`

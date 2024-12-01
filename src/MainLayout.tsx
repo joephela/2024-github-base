@@ -1,6 +1,6 @@
 import { css, Global } from '@emotion/react'
 import { Header } from './components/Header'
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import { Fragment } from 'react'
 import { Themes } from './common/theme'
 import { Footer } from './Footer'
@@ -44,6 +44,7 @@ const globalStyles = css`
 export function MainLayout() {
   return (
     <Fragment>
+      <ScrollRestoration />
       <Global styles={globalStyles} />
       {document.location.origin === 'https://joephela.github.io' ? (
         <Moved />

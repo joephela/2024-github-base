@@ -188,6 +188,7 @@ export function News() {
 
         <Button
           css={borderedButton}
+          type="button"
           onClick={() => {
             setParams()
 
