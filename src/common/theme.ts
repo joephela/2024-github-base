@@ -57,7 +57,7 @@ export const Themes = css`
 
 export function swapTheme() {
   const currentTheme = window.localStorage.getItem('theme')
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+  const newTheme = currentTheme === 'dark' || !currentTheme ? 'light' : 'dark'
 
   if (typeof window !== 'undefined') {
     window.localStorage.setItem('theme', newTheme)
