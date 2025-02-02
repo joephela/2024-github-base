@@ -25,6 +25,20 @@ export const transitionMixin = css`
   }
 `
 
+export const gradientMixin = css`
+  background: linear-gradient(
+    90deg,
+    var(--bg-footer-header) 50%,
+    var(--bg-color)
+  );
+  background-size: 200% 100%;
+  animation: gradient 10s ease infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: unset;
+  }
+`
+
 export const focusMixin = css`
   :hover,
   :focus {

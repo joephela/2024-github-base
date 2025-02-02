@@ -3,7 +3,7 @@ import { Header } from './components/Header'
 import { Outlet, ScrollRestoration } from 'react-router-dom'
 import { Fragment } from 'react'
 import { Themes } from './common/theme'
-import { Footer } from './Footer'
+import { Footer } from './components/Footer'
 import { Moved } from './components/Moved'
 
 const FOOTER_HEIGHT = '128px'
@@ -16,14 +16,25 @@ const mainStyle = css`
 `
 
 const globalStyles = css`
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 70% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   body {
     ${Themes}
     margin: 0;
     color: var(--fg-color);
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: var(--fg-color);
-    background-color: var(--bg-color);
     overflow-x: hidden;
 
     p {

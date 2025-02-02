@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
-import { SocialLinks } from './components/SocialLinks'
+import { SocialLinks } from './SocialLinks'
+import { gradientMixin } from '../common/sharedStyles'
 
 const footerStyle = css`
   background: var(--bg-footer-header);
@@ -10,6 +11,7 @@ const footerStyle = css`
   padding-inline: var(--layout-padding);
   align-items: center;
   padding-block: 8px;
+  ${gradientMixin}
 `
 
 const footerTextWrapperStyle = css`

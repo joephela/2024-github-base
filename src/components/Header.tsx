@@ -6,6 +6,7 @@ import Me from '../assets/me.jpeg'
 import { Button } from './Button'
 import { Nav } from './Nav'
 import { Menu } from './Menu'
+import { gradientMixin } from '../common/sharedStyles'
 
 const headingStyles = css`
   margin: 0;
@@ -26,6 +27,7 @@ const headerWrapperStyle = css`
   border-bottom: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
   padding-block: 16px;
+  ${gradientMixin}
 `
 
 const headingRightSideStyle = css`
