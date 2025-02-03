@@ -25,10 +25,12 @@ const avatarStyle = css`
   width: 200px;
   transition: clip-path 1s;
   animation: path 15s ease infinite;
+  margin-inline-start: -40px;
 
   @media (prefers-reduced-motion) {
     animation: unset;
     border-radius: 20px;
+    margin-inline-start: 0;
   }
 `
 
