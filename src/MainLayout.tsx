@@ -49,6 +49,11 @@ const globalStyles = css`
   li {
     text-decoration: none;
   }
+
+  h1 {
+    font-size: 2em;
+    margin-block: 1em;
+  }
 `
 
 export function MainLayout() {
