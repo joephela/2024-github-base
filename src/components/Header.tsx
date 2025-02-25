@@ -11,9 +11,16 @@ import { gradientMixin } from '../common/sharedStyles'
 const headingStyles = css`
   margin: 0;
   max-width: 320px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
   font-variant: petite-caps;
+`
+
+const linkStyle = css`
+  && {
+    text-decoration: none;
+    color: var(--fg-color);
+  }
 `
 
 const headerWrapperStyle = css`
@@ -45,13 +52,15 @@ const headingRightSideStyle = css`
 
 const avatarStyle = css`
   border-radius: 100%;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  margin-bottom: -6px;
 `
+
 const imageHeaderStyle = css`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 `
 
 const menuButtonStyle = css`
@@ -65,18 +74,18 @@ const menuButtonStyle = css`
 export function Header() {
   return (
     <header css={headerWrapperStyle}>
-      <div css={imageHeaderStyle}>
-        <Link to="/">
+      <Link to="/" css={linkStyle}>
+        <span css={imageHeaderStyle}>
           <img
             src={Me}
             css={avatarStyle}
             alt="Picture of Joe Phelan"
             id="joephela-avatar"
           />
-        </Link>
 
-        <span css={headingStyles}>Joseph D. Phelan</span>
-      </div>
+          <span css={headingStyles}>Joseph D. Phelan</span>
+        </span>
+      </Link>
       <div>
         <div css={menuButtonStyle}>
           <Menu />
