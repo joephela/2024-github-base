@@ -34,7 +34,6 @@ const headerWrapperStyle = css`
   border-bottom: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
   padding-block: 16px;
-  ${gradientMixin}
 `
 
 const headingRightSideStyle = css`

@@ -19,7 +19,7 @@ export type Theme = 'dark' | 'light' | null
 
 export const Themes = css`
   --color-black: #171717;
-  --color-white: #f8f9f9;
+  --color-white: #ffffff;
   --color-light-blue: #7aaaaa;
   --color-blue: #486666;
   --layout-padding: 32px;
