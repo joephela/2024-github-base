@@ -33,14 +33,13 @@ const globalStyles = css`
     margin: 0;
     color: var(--fg-color);
     background: var(--bg-color);
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', serif;
+    font-size: medium;
     color: var(--fg-color);
     overflow-x: hidden;
-
-    p {
-      font-size: medium;
-      line-height: 1.4em;
-    }
+    font-optical-sizing: auto;
+    font-variation-settings: 'wdth' 100;
+    font-style: normal;
   }
 
   ul {

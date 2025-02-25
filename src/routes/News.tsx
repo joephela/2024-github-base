@@ -29,7 +29,7 @@ const inputStyle = css`
   height: 36px;
   width: 200px;
   border: 1px solid var(--fg-color);
-  border-radius: 4px 0 0 4px;
+  border-radius: 20px 0 0 20px;
   color: var(--fg-color);
   background: var(--bg-color);
   padding-inline: 8px;
@@ -46,7 +46,7 @@ const inputStyle = css`
 const searchStyle = css`
   ${borderedButton}
   height: 36px;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 20px 20px 0;
   border-left: 0;
   box-sizing: border-box;
 `
@@ -75,7 +75,7 @@ const searchFormWrapperStyle = css`
 
 const selectStyle = css`
   border: 1px solid var(--fg-color);
-  border-radius: 4px;
+  border-radius: 20px;
   background: unset;
   height: 36px;
   font-size: medium;
