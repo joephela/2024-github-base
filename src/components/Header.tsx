@@ -49,9 +49,8 @@ const headingRightSideStyle = css`
 `
 
 const avatarStyle = css`
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   margin-bottom: -6px;
 `
 
@@ -75,7 +74,7 @@ export function Header() {
       <Link to="/" css={linkStyle}>
         <span css={imageHeaderStyle}>
           <img
-            src={Me}
+            src={'/JP.svg'}
             css={avatarStyle}
             alt="Picture of Joe Phelan"
             id="joephela-avatar"
