@@ -39,7 +39,6 @@ const cardsWrapperStyle = css`
 const cardStyle = css`
   width: 120px;
   height: 120px;
-  box-shadow: 1px 1px 4px var(--fg-color);
   display: flex;
   justify-content: end;
   align-items: center;
@@ -48,11 +47,12 @@ const cardStyle = css`
   cursor: pointer;
   flex-direction: column;
   color: unset;
+  transition: transform 0.2s linear;
   ${focusMixin}
 
   &:hover,
   &:focus {
-    box-shadow: 1px 1px 1px var(--hover-color);
+    transform: scale(1.1);
   }
 `
 

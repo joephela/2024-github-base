@@ -6,10 +6,6 @@ const selectWrapperStyle = css`
   gap: 4px;
   flex-direction: column;
 
-  select {
-    width: fit-content;
-  }
-
   option {
     background: var(--bg-color);
     color: var(--fg-color);

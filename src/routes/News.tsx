@@ -22,14 +22,15 @@ const searchResultsWrapperStyle = css`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding-block: 8px;
+  padding-block: 16px;
+  justify-content: center;
 `
 
 const inputStyle = css`
-  height: 36px;
+  height: 44px;
   width: 200px;
   border: 1px solid var(--fg-color);
-  border-radius: 20px 0 0 20px;
+  border-radius: 50px 0 0 50px;
   color: var(--fg-color);
   background: var(--bg-color);
   padding-inline: 8px;
@@ -45,8 +46,8 @@ const inputStyle = css`
 
 const searchStyle = css`
   ${borderedButton}
-  height: 36px;
-  border-radius: 0 20px 20px 0;
+  height: 44px;
+  border-radius: 0 50% 50% 0;
   border-left: 0;
   box-sizing: border-box;
 `
@@ -71,13 +72,14 @@ const searchFormWrapperStyle = css`
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+  margin-block-end: 16px;
 `
 
 const selectStyle = css`
   border: 1px solid var(--fg-color);
-  border-radius: 20px;
+  border-radius: 50px;
   background: unset;
-  height: 36px;
+  height: 44px;
   font-size: medium;
   cursor: pointer;
   color: var(--fg-color);
@@ -95,9 +97,9 @@ export function News() {
   const limitInt = limit ? parseInt(limit) : 25
   const [searchInput, setSearchInput] = useState('')
   const limitOptions = [
-    { label: '25', value: '25' },
-    { label: '50', value: '50' },
-    { label: '100', value: '100' },
+    { label: '25 per page', value: '25' },
+    { label: '50 per page', value: '50' },
+    { label: '100 per page', value: '100' },
   ]
   const inputRef = useRef<HTMLInputElement>(null)
   const {
@@ -186,7 +188,7 @@ export function News() {
           }}
         />
 
-        <Button
+        {/* <Button
           css={borderedButton}
           type="button"
           onClick={() => {
@@ -198,7 +200,7 @@ export function News() {
           }}
         >
           Reset
-        </Button>
+        </Button> */}
       </div>
       {articlesResponse?.results.length ? (
         <Paginator articlesResponse={articlesResponse} />

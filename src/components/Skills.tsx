@@ -23,8 +23,8 @@ export function Skills() {
         <Pill text="Playwright" />
         <Pill text="Emotion" />
         <Pill text="Web Components" />
-        <Pill text="HTML" />
         <Pill text="Figma" />
+        <Pill text="Node.js" />
         <Pill text="Java" />
         <Pill text="SQL" />
         <Pill text="AWS" />

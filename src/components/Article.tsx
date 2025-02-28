@@ -6,8 +6,9 @@ const articleStyle = css`
   display: flex;
   gap: 16px;
   width: 90%;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid gray;
   padding: 16px;
+  padding-block: 40px;
 
   &&:last-child {
     border-bottom: none;
