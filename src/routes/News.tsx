@@ -89,7 +89,7 @@ const selectStyle = css`
 export function News() {
   const { ref } = useFadeTransition()
   const navigate = useNavigate()
-  const [params, setParams] = useSearchParams()
+  const [params] = useSearchParams()
   const offset = params.get('offset')
   const limit = params.get('limit')
   const search = params.get('search')
