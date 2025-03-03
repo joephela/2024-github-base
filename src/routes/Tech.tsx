@@ -53,6 +53,10 @@ const cardStyle = css`
   &:hover,
   &:focus {
     transform: scale(1.1);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
   }
 `
 
