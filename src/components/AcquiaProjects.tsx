@@ -39,6 +39,11 @@ const imageWrapperStyle = css`
   justify-content: center;
   border: 1px solid grey;
   border-radius: 5px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    border: none;
+  }
 `
 
 export function AcquiaProjects() {
