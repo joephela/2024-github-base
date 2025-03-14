@@ -4,7 +4,6 @@ import { FullscreenImage } from './FullScreenImage'
 const acquiaProjectsWrapperStyle = css`
   display: flex;
   padding: 16px;
-  margin-block: 40px;
   gap: 40px;
   flex-wrap: wrap;
 `
