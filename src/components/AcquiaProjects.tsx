@@ -50,9 +50,6 @@ export function AcquiaProjects() {
   return (
     <div css={acquiaProjectsWrapperStyle}>
       <div css={flexStyle}>
-        <div css={imageWrapperStyle}>
-          <FullscreenImage src="/portals.jpg" alt="Portals application" />
-        </div>
         <div css={paragraphStyle}>
           <h4>Portals</h4>
           <p>
@@ -64,15 +61,12 @@ export function AcquiaProjects() {
             enhancements and new features.
           </p>
         </div>
+        <div css={imageWrapperStyle}>
+          <FullscreenImage src="/portals.jpg" alt="Portals application" />
+        </div>
       </div>
 
       <div css={flexStyle}>
-        <div css={imageWrapperStyle}>
-          <FullscreenImage
-            src="/crop_download.jpg"
-            alt="Crop & download application"
-          />
-        </div>
         <div css={paragraphStyle}>
           <h4>Crop & Download</h4>
           <p>
@@ -81,12 +75,15 @@ export function AcquiaProjects() {
             product suite.
           </p>
         </div>
+        <div css={imageWrapperStyle}>
+          <FullscreenImage
+            src="/crop_download.jpg"
+            alt="Crop & download application"
+          />
+        </div>
       </div>
 
       <div css={flexStyle}>
-        <div css={imageWrapperStyle}>
-          <FullscreenImage src="/search.jpg" alt="Search application" />
-        </div>
         <div css={paragraphStyle}>
           <h4>Search</h4>
           <p>
@@ -94,6 +91,9 @@ export function AcquiaProjects() {
             a DAM site. I worked on the team that was responsible for the front
             end of the product developing enhancements and new features.
           </p>
+        </div>
+        <div css={imageWrapperStyle}>
+          <FullscreenImage src="/search.jpg" alt="Search application" />
         </div>
       </div>
     </div>
