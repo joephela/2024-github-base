@@ -7,7 +7,7 @@ export const offscreenStyle = css`
 `
 
 export const centerMixin = css`
-  max-width: 53em;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 `

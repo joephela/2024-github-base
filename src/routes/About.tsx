@@ -22,7 +22,9 @@ const figureStyle = css`
   font-size: smaller;
   text-indent: 0;
   margin: 0.5em;
+  margin-inline: auto;
   padding: 0.5em;
+  max-width: 600px;
 `
 
 export function AboutMe() {
