@@ -22,11 +22,14 @@ export const Themes = css`
   --color-white: #ffffff;
   --color-light-blue: #97cbcb;
   --color-blue: #486666;
+  --color-light-gray: #aba5a5;
+  --color-gray: #393939;
   --layout-padding: 32px;
 
   --bg-accent: var(--color-blue);
   --fg-accent: var(--color-white);
   --hover-color: #203939;
+  --border-color: var(--color-light-gray);
   --bg-color: var(--color-white);
   --fg-color: var(--color-black);
   --bg-footer-header: var(--color-light-blue);
@@ -44,6 +47,7 @@ export const Themes = css`
     --fg-accent: var(--color-black);
     --bg-footer-header: darkslategray;
     --hover-color: #9ed0d0;
+    --border-color: var(--color-gray);
 
     a {
       color: darkturquoise;

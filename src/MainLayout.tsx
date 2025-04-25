@@ -7,8 +7,8 @@ import { Footer } from './components/Footer'
 import { Moved } from './components/Moved'
 import { Avatar } from './components/Avatar'
 
-const FOOTER_HEIGHT = '128px'
-const HEADER_HEIGHT = '123px'
+const FOOTER_HEIGHT = '108px'
+const HEADER_HEIGHT = '86px'
 
 const mainStyle = css`
   height: 100%;

@@ -1,17 +1,18 @@
 import { css } from '@emotion/react'
 import { SocialLinks } from './SocialLinks'
-import { gradientMixin } from '../common/sharedStyles'
 
 const footerStyle = css`
   background: var(--bg-footer-header);
-  margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
   align-items: center;
-  padding-block: 8px;
-  ${gradientMixin}
+  padding-block-start: 48px;
+  background: linear-gradient(
+    180deg,
+    var(--bg-color) 0%,
+    var(--bg-footer-header) 150%
+  );
 `
 
 const footerTextWrapperStyle = css`

@@ -2,9 +2,8 @@ import { css } from '@emotion/react'
 
 const cardStyle = css`
   background: var(--bg-color);
-  border: 1px solid var(--fg-color);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  box-shadow: 0 2px 4px var(--fg-color);
   overflow: hidden;
   display: flex;
   flex-direction: column;
