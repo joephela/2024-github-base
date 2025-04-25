@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { FullscreenImage } from './FullScreenImage'
 import { Project } from './Project'
 
 const acquiaProjectsWrapperStyle = css`

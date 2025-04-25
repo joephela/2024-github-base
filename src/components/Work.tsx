@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { Fragment } from 'react'
 
 const titleStyle = css`
   font-weight: bold;

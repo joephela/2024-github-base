@@ -1,12 +1,10 @@
 import { css } from '@emotion/react'
-import { Avatar } from '../components/Avatar'
 import { Skills } from '../components/Skills'
 import {
   centerMixin,
   offscreenStyle,
   transitionMixin,
 } from '../common/sharedStyles'
-import { MOBILE_BREAKPOINT } from '../common/theme'
 import { Helmet } from 'react-helmet'
 import { useFadeTransition } from '../hooks/useFadeTransition'
 import { AcquiaProjects } from '../components/AcquiaProjects'
