@@ -17,15 +17,15 @@ export const FullscreenImage = ({ src, alt }: { src: string; alt: string }) => {
             toggleFullscreen()
           }}
           style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+            alignItems: 'center',
             backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            bottom: 0,
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            left: 0,
+            position: 'fixed',
+            right: 0,
+            top: 0,
             zIndex: 1000,
           }}
           tabIndex={0}

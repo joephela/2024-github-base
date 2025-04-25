@@ -1,74 +1,67 @@
 import { css } from '@emotion/react'
-import { Project } from './Project'
+import { Card } from './card'
 
 const acquiaProjectsWrapperStyle = css`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
   padding: 16px;
-  gap: 40px;
-  flex-wrap: wrap;
-
-  @media (max-width: 1000px) {
-    gap: 8px;
-  }
-`
-
-const divider = css`
-  width: 100%;
-  height: 1px;
-  background-color: #e0e0e0;
-  margin: 16px 0;
-  border-radius: 5px;
+  margin-block-start: 16px;
 `
 
 export function AcquiaProjects() {
   return (
     <div css={acquiaProjectsWrapperStyle}>
-      <Project
+      <Card
+        imageSrc="/portals.jpg"
+        imageAlt="portals application"
         title="Portals"
-        description="Portals is a product that provides a way to create and manage
-            multiple websites from a single interface. It is a multi-tenant,
-            SaaS product that allows users to create and manage websites to show
-            off their dam assets in various ways. I worked on the team that was
-            responsible for the front end of the product and developing
-            enhancements and new features."
-        image="/portals.jpg"
-        alt="portals application"
+        description="Portals is a product that provides a way to create and manage multiple websites from a single interface. It is a multi-tenant, SaaS product that allows users to create and manage websites to show off their dam assets in various ways. I worked on the team that was responsible for the front end of the product and developing enhancements and new features."
+        link={{
+          href: 'https://www.acquia.com/products/acquia-dam/portals',
+          text: 'Visit Portals',
+        }}
       />
-      <i css={divider}></i>
-      <Project
+
+      <Card
+        imageSrc="/crop_download.jpg"
+        imageAlt="Crop & download application"
         title="Crop & Download"
-        description="Allows users to crop and download assets from a DAM site. This was
-            setup as a micro frontend that is shared across the product suite."
-        image="/crop_download.jpg"
-        alt="Crop & download application"
-        reverse={true}
+        description="Allows users to crop and download assets from a DAM site. This was setup as a micro frontend that is shared across the product suite."
+        link={{
+          href: 'https://www.acquia.com/products/acquia-dam',
+          text: 'Visit Acquia DAM',
+        }}
       />
-      <i css={divider}></i>
-      <Project
+
+      <Card
+        imageSrc="/search.jpg"
+        imageAlt="search application"
         title="Search"
-        alt="search application"
-        description="Search provides a way to search for assets across a DAM site. I
-            worked on the team that was responsible for the front end of the
-            product developing enhancements and new features."
-        image="/search.jpg"
+        description="Search provides a way to search for assets across a DAM site. I worked on the team that was responsible for the front end of the product developing enhancements and new features."
+        link={{
+          href: 'https://www.acquia.com/products/acquia-dam',
+          text: 'Visit Acquia DAM',
+        }}
       />
-      <i css={divider}></i>
-      <Project
+
+      <Card
+        imageSrc="/infillify.png"
+        imageAlt="Infillify application"
         title="Infillify"
-        description="An AI image editor you can use to add or remove objects from your
-          photos."
-        image="/infillify.png"
-        alt="Infillify application"
-        link="https://www.infillify.com"
-        reverse={true}
+        description="An AI image editor you can use to add or remove objects from your photos."
+        link={{ href: 'https://www.infillify.com', text: 'Visit Infillify' }}
       />
-      <i css={divider}></i>
-      <Project
+
+      <Card
+        imageSrc="/kindness.jpg"
+        imageAlt="Kindness Task application"
         title="Kindness Task"
         description="A daily task manager to help you achieve your daily goals."
-        image="/kindness.jpg"
-        alt="Kindness Task application"
-        link="https://www.kindnesstask.com"
+        link={{
+          href: 'https://www.kindnesstask.com',
+          text: 'Visit Kindness Task',
+        }}
       />
     </div>
   )

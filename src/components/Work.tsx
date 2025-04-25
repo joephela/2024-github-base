@@ -19,7 +19,7 @@ const workDutyListStyle = css`
 export function Work() {
   return (
     <div>
-      <h2>Work</h2>
+      <h2>Work Experience</h2>
       <p css={titleStyle}>Acquia</p>
       <p css={workTitleStyle}>Staff software engineer (2024 - current)</p>
       <p css={workSubtitleStyle}>
