@@ -1,10 +1,11 @@
 import { css, Global } from '@emotion/react'
 import { Header } from './components/Header'
-import { Outlet, ScrollRestoration } from 'react-router-dom'
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
 import { Fragment } from 'react'
-import { Themes } from './common/theme'
+import { MOBILE_BREAKPOINT, Themes } from './common/theme'
 import { Footer } from './components/Footer'
 import { Moved } from './components/Moved'
+import { Avatar } from './components/Avatar'
 
 const FOOTER_HEIGHT = '128px'
 const HEADER_HEIGHT = '123px'
@@ -56,7 +57,60 @@ const globalStyles = css`
   }
 `
 
+const sectionStyle = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(
+    180deg,
+    var(--bg-footer-header) 0%,
+    var(--bg-color) 100%
+  );
+  color: var(--light-text-color);
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    padding: 1.5rem;
+  }
+`
+
+const avatarWrapperStyle = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
+`
+
+const headingStyle = css`
+  font-size: 2.5rem;
+  margin: 0;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: 2rem;
+  }
+`
+
+const paragraphTextStyle = css`
+  max-width: 42em;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+
+  @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+`
+
 export function MainLayout() {
+  const { pathname } = useLocation()
+
   return (
     <Fragment>
       <ScrollRestoration />
@@ -66,6 +120,20 @@ export function MainLayout() {
       ) : (
         <Fragment>
           <Header />
+          {pathname === '/' ? (
+            <section css={sectionStyle}>
+              <div css={avatarWrapperStyle}>
+                <Avatar />
+                <h1 css={headingStyle}>Joe Phelan</h1>
+              </div>
+              <p css={paragraphTextStyle}>
+                Experienced software developer with a decade of expertise in
+                building web applications, specializing in front-end
+                development. Passionate about modernizing legacy code and
+                collaborating with UX teams to design new innovative features.
+              </p>
+            </section>
+          ) : null}
           <main css={mainStyle}>
             <Outlet />
           </main>

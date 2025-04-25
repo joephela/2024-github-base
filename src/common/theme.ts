@@ -20,7 +20,7 @@ export type Theme = 'dark' | 'light' | null
 export const Themes = css`
   --color-black: #171717;
   --color-white: #ffffff;
-  --color-light-blue: #7aaaaa;
+  --color-light-blue: #97cbcb;
   --color-blue: #486666;
   --layout-padding: 32px;
 
@@ -29,7 +29,7 @@ export const Themes = css`
   --hover-color: #203939;
   --bg-color: var(--color-white);
   --fg-color: var(--color-black);
-  --bg-footer-header: #d9dee1;
+  --bg-footer-header: var(--color-light-blue);
   --z-index-modal: 15;
   --z-index-popover: 10;
 

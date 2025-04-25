@@ -75,7 +75,7 @@ export function Article({
       </div>
       <div>
         <a href={url} target="_blank">
-          <h3>{title}</h3>
+          <h2>{title}</h2>
         </a>
         <p
           css={dateLineStyle}

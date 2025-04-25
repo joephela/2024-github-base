@@ -19,8 +19,8 @@ const workDutyListStyle = css`
 
 export function Work() {
   return (
-    <Fragment>
-      <h3>Work</h3>
+    <div>
+      <h2>Work</h2>
       <p css={titleStyle}>Acquia</p>
       <p css={workTitleStyle}>Staff software engineer (2024 - current)</p>
       <p css={workSubtitleStyle}>
@@ -118,6 +118,6 @@ export function Work() {
           code
         </li>
       </ul>
-    </Fragment>
+    </div>
   )
 }

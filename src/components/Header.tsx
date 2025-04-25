@@ -23,13 +23,11 @@ const linkStyle = css`
 
 const headerWrapperStyle = css`
   background: var(--bg-footer-header);
-  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid var(--fg-color);
   padding-inline: var(--layout-padding);
   padding-block: 16px;
 `

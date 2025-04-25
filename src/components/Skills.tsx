@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { Fragment } from 'react'
 import { Pill } from './Pill'
 
 const pillWrapperStyle = css`
@@ -10,8 +9,8 @@ const pillWrapperStyle = css`
 
 export function Skills() {
   return (
-    <Fragment>
-      <h3>Skills</h3>
+    <div>
+      <h2>Skills</h2>
       <div css={pillWrapperStyle}>
         <Pill text="Typescript" />
         <Pill text="Javascript" />
@@ -29,6 +28,6 @@ export function Skills() {
         <Pill text="SQL" />
         <Pill text="AWS" />
       </div>
-    </Fragment>
+    </div>
   )
 }
