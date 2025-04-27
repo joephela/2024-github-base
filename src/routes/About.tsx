@@ -61,6 +61,10 @@ const interestItemStyle = css`
   &:hover {
     transform: scale(1.03);
     border-style: solid;
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
   }
 
   & strong {
@@ -77,6 +81,10 @@ const interestItemStyle = css`
       left: 0;
       color: var(--bg-accent);
     }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
   }
 `
 

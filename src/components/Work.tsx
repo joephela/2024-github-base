@@ -30,6 +30,14 @@ const experienceCard = css`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
   }
 `
 
@@ -50,6 +58,10 @@ const companyHeader = css`
     width: 20px;
     height: 20px;
     background-color: var(--bg-accent);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
   }
 `
 
@@ -99,6 +111,18 @@ const educationStyle = css`
   position: relative;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   border-top: 5px solid var(--bg-accent);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
+  }
 
   &:after {
     content: '🎓';
@@ -106,6 +130,10 @@ const educationStyle = css`
     top: 0px;
     right: 8px;
     font-size: 40px;
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
   }
 `
 

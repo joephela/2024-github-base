@@ -58,7 +58,7 @@ const sectionStyle = css`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 7rem 1rem;
   background: linear-gradient(
     180deg,
     var(--bg-footer-header) 0%,
@@ -68,7 +68,7 @@ const sectionStyle = css`
   margin-bottom: 2rem;
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
-    padding: 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 `
 
@@ -123,10 +123,12 @@ export function MainLayout() {
                 <h1 css={headingStyle}>Joe Phelan</h1>
               </div>
               <p css={paragraphTextStyle}>
-                Experienced software developer with a decade of expertise in
-                building web applications, specializing in front-end
-                development. Passionate about modernizing legacy code and
-                collaborating with UX teams to design new innovative features.
+                Professional software engineer with over 12 years of experience
+                working on web applications and a strong desire to continue
+                learning. Passionate about modernizing legacy code,
+                collaborating with UX teams to design new innovative features,
+                and come up with creative ways to adapt to our ever changing
+                field.
               </p>
             </section>
           ) : null}

@@ -8,6 +8,20 @@ const cardStyle = css`
   display: flex;
   flex-direction: column;
   padding: 16px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
+  }
 `
 
 const cardImageStyle = css`

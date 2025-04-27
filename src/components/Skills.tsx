@@ -20,6 +20,14 @@ const categoryStyle = css`
 
   &:hover {
     transform: translateY(-2px);
+
+    @media (prefers-reduced-motion) {
+      transform: unset;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
   }
 `
 
@@ -73,6 +81,7 @@ export function Skills() {
         <div css={pillWrapperStyle}>
           <Pill text="Hiring" />
           <Pill text="Mentoring" />
+          <Pill text="AI context wrangler" />
         </div>
       </div>
     </div>
