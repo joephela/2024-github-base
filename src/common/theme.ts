@@ -26,7 +26,14 @@ export const Themes = css`
   --color-gray: #393939;
   --layout-padding: 32px;
 
+  /* RGB values for rgba usage */
+  --color-blue-rgb: 72, 102, 102;
+  --color-light-blue-rgb: 151, 203, 203;
+  --color-black-rgb: 23, 23, 23;
+  --color-white-rgb: 255, 255, 255;
+
   --bg-accent: var(--color-blue);
+  --bg-accent-rgb: var(--color-blue-rgb);
   --fg-accent: var(--color-white);
   --hover-color: #203939;
   --border-color: var(--color-light-gray);
@@ -44,6 +51,7 @@ export const Themes = css`
     --bg-color: var(--color-black);
     --fg-color: var(--color-white);
     --bg-accent: var(--color-light-blue);
+    --bg-accent-rgb: var(--color-light-blue-rgb);
     --fg-accent: var(--color-black);
     --bg-footer-header: darkslategray;
     --hover-color: #9ed0d0;
