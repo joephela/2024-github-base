@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
 import { Pill } from './Pill'
+import { sectionHeader } from '../common/sharedStyles'
 
 const pillWrapperStyle = css`
   display: flex;
@@ -10,7 +11,7 @@ const pillWrapperStyle = css`
 export function Skills() {
   return (
     <div>
-      <h2>Skills</h2>
+      <h2 css={sectionHeader}>Skills</h2>
       <div css={pillWrapperStyle}>
         <Pill text="Typescript" />
         <Pill text="Javascript" />

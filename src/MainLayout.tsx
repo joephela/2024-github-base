@@ -43,10 +43,6 @@ const globalStyles = css`
     font-style: normal;
   }
 
-  ul {
-    list-style: none;
-  }
-
   li {
     text-decoration: none;
   }

@@ -3,6 +3,7 @@ import { Skills } from '../components/Skills'
 import {
   centerMixin,
   offscreenStyle,
+  sectionHeader,
   transitionMixin,
 } from '../common/sharedStyles'
 import { Helmet } from 'react-helmet'
@@ -17,10 +18,6 @@ const homeContainerStyle = css`
   gap: 32px;
   flex-direction: column;
   align-items: flex-start;
-
-  li {
-    list-style: circle;
-  }
 
   p {
     margin-block: 0;
@@ -38,7 +35,7 @@ export function Home() {
       <h1 css={offscreenStyle}>Home page for Joseph Phelan</h1>
       <Skills />
       <div>
-        <h2>Projects</h2>
+        <h2 css={sectionHeader}>Projects</h2>
         <p>
           A showcase of personal and professional projects I've contributed to.
         </p>

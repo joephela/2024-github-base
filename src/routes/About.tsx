@@ -1,7 +1,11 @@
 import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
 import { Helmet } from 'react-helmet'
-import { centerMixin, transitionMixin } from '../common/sharedStyles'
+import {
+  centerMixin,
+  sectionHeader,
+  transitionMixin,
+} from '../common/sharedStyles'
 import { useFadeTransition } from '../hooks/useFadeTransition'
 
 const avatarStyle = css`
@@ -27,6 +31,55 @@ const figureStyle = css`
   max-width: 600px;
 `
 
+const aboutMeContainer = css`
+  margin: 40px 0;
+`
+
+const sectionSubHeader = css`
+  color: var(--bg-accent);
+  margin: 24px 0 16px;
+  font-size: 1.4rem;
+  position: relative;
+`
+
+const interestsStyle = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+`
+
+const interestItemStyle = css`
+  margin-bottom: 0;
+  background-color: var(--bg-color);
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 2px dashed var(--bg-accent);
+
+  &:hover {
+    transform: scale(1.03);
+    border-style: solid;
+  }
+
+  & strong {
+    color: var(--hover-color);
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 28px;
+
+    &:before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--bg-accent);
+    }
+  }
+`
+
 export function AboutMe() {
   const { ref } = useFadeTransition()
 
@@ -39,7 +92,7 @@ export function AboutMe() {
         />
         <title>About - Joseph D. Phelan</title>
       </Helmet>
-      <h1>About</h1>
+      <h1 css={sectionHeader}>About</h1>
       <p>
         From my humble beginnings working on my fathers farm I learned the value
         of hard work. After spending time with our family DOS computer, I
@@ -72,6 +125,28 @@ export function AboutMe() {
         />
         <figcaption>My family and I</figcaption>
       </figure>
+      <div css={aboutMeContainer}>
+        <h3 css={sectionSubHeader}>Interests</h3>
+        <div css={interestsStyle}>
+          <div css={interestItemStyle}>
+            <strong>Reading</strong>
+            I'm a sucker for sci-fi books and lately have been reading some non
+            fiction around AI development.
+          </div>
+          <div css={interestItemStyle}>
+            <strong>Gardening</strong>A great way to unplug after being at a
+            computer all day.
+          </div>
+          <div css={interestItemStyle}>
+            <strong>Baking bread</strong>I recently got into making sourdough
+            and created a starter from scratch.
+          </div>
+          <div css={interestItemStyle}>
+            <strong>Hiking</strong>A way to escape and immerse yourself in
+            nature while getting steps in.
+          </div>
+        </div>
+      </div>
     </article>
   )
 }

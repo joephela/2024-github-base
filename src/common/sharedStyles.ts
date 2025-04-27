@@ -54,3 +54,22 @@ export const focusMixin = css`
     opacity: 80%;
   }
 `
+
+export const sectionHeader = css`
+  color: var(--fg-color);
+  border-bottom: 3px solid var(--bg-accent);
+  padding-bottom: 12px;
+  margin-top: 36px;
+  font-size: 1.8rem;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--hover-color);
+  }
+`

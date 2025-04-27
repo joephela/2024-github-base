@@ -8,6 +8,7 @@ const navStyle = css`
   display: flex;
   gap: 20px;
   padding: 0px;
+  list-style: none;
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: column;
