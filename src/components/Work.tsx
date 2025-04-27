@@ -58,10 +58,6 @@ const companyHeader = css`
     width: 20px;
     height: 20px;
     background-color: var(--bg-accent);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
   }
 `
 

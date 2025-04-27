@@ -123,12 +123,12 @@ export function MainLayout() {
                 <h1 css={headingStyle}>Joe Phelan</h1>
               </div>
               <p css={paragraphTextStyle}>
-                Professional software engineer with over 12 years of experience
-                working on web applications and a strong desire to continue
-                learning. Passionate about modernizing legacy code,
-                collaborating with UX teams to design new innovative features,
-                and come up with creative ways to adapt to our ever changing
-                field.
+                Seasoned software engineer bringing 12+ years of experience in
+                web application development, combined with a strong dedication
+                to continuous learning. Passionate about Improving legacy
+                systems, partnering with UX specialists to craft innovative
+                features, and developing creative solutions to navigate our
+                industry's constant evolution.
               </p>
             </section>
           ) : null}
