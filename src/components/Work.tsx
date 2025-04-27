@@ -20,8 +20,8 @@ const experienceContainer = css`
 `
 
 const experienceCard = css`
-  background-color: var(--bg-footer-header);
   border-radius: 12px;
+  border: 1px solid var(--border-color);
   overflow: hidden;
   transition:
     transform 0.3s ease,
@@ -55,6 +55,7 @@ const companyHeader = css`
 
 const roleContainer = css`
   padding: 20px 24px;
+  background-color: rgba(var(--bg-accent-rgb, 72, 102, 102), 0.08);
 `
 
 const workTitleStyle = css`
@@ -75,7 +76,6 @@ const workTitleStyle = css`
     font-style: italic;
     color: var(--hover-color);
     font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
     padding: 4px 12px;
     border-radius: 16px;
   }
@@ -91,13 +91,10 @@ const workDutyListStyle = css`
 `
 
 const educationStyle = css`
-  background: linear-gradient(
-    135deg,
-    var(--bg-footer-header) 0%,
-    var(--bg-color) 100%
-  );
+  background-color: rgba(var(--bg-accent-rgb, 72, 102, 102), 0.08);
   padding: 30px;
   border-radius: 16px;
+  border: 1px solid var(--border-color);
   margin: 32px 0;
   position: relative;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
