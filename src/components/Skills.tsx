@@ -43,7 +43,7 @@ const categoryHeaderStyle = css`
 
 export function Skills() {
   return (
-    <div>
+    <div css={{ width: '100%' }}>
       <h2 css={sectionHeader}>Skills</h2>
 
       <div css={categoryStyle}>

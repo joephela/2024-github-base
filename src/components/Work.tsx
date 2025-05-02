@@ -3,8 +3,7 @@ import { MOBILE_BREAKPOINT } from '../common/theme'
 import { sectionHeader } from '../common/sharedStyles'
 
 const resumeContainer = css`
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
   line-height: 1.8;
   color: var(--fg-color);
 `

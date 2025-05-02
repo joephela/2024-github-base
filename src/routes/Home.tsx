@@ -24,6 +24,10 @@ const homeContainerStyle = css`
   }
 `
 
+const mainStyle = css`
+  width: 100%;
+`
+
 export function Home() {
   const { ref } = useFadeTransition()
 
@@ -33,16 +37,17 @@ export function Home() {
         <title>Joseph D. Phelan</title>
       </Helmet>
       <h1 css={offscreenStyle}>Home page for Joseph Phelan</h1>
-      <Skills />
-      <div>
+
+      <div css={mainStyle}>
+        <Skills />
         <h2 css={sectionHeader}>Projects</h2>
         <p>
           A showcase of personal and professional projects I've contributed to.
         </p>
 
         <AcquiaProjects />
+        <Work />
       </div>
-      <Work />
     </div>
   )
 }

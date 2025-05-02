@@ -6,6 +6,7 @@ const acquiaProjectsWrapperStyle = css`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   padding: 16px;
+  width: 100%;
   margin-block-start: 16px;
 `
 
