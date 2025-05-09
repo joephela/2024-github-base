@@ -36,7 +36,10 @@ export const Themes = css`
   --bg-accent-rgb: var(--color-blue-rgb);
   --fg-accent: var(--color-white);
   --hover-color: #203939;
+  --hover-color-fg: var(--color-white);
   --border-color: var(--color-light-gray);
+  --active-color: var(--color-light-blue);
+
   --bg-color: var(--color-white);
   --fg-color: var(--color-black);
   --bg-footer-header: var(--color-light-blue);
@@ -55,7 +58,9 @@ export const Themes = css`
     --fg-accent: var(--color-black);
     --bg-footer-header: darkslategray;
     --hover-color: #9ed0d0;
+    --hover-color-fg: var(--color-black);
     --border-color: var(--color-gray);
+    --active-color: var(--color-blue);
 
     a {
       color: darkturquoise;

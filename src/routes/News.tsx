@@ -29,7 +29,7 @@ const searchResultsWrapperStyle = css`
 const inputStyle = css`
   height: 44px;
   width: 200px;
-  border: 1px solid var(--fg-color);
+  border: 1px solid var(--border-color);
   border-radius: 50px 0 0 50px;
   color: var(--fg-color);
   background: var(--bg-color);
@@ -76,7 +76,7 @@ const searchFormWrapperStyle = css`
 `
 
 const selectStyle = css`
-  border: 1px solid var(--fg-color);
+  border: 1px solid var(--border-color);
   border-radius: 50px;
   background: unset;
   height: 44px;
@@ -186,21 +186,8 @@ export function News() {
               search: search ?? '',
             })
           }}
+          value={limit?.toString()}
         />
-
-        {/* <Button
-          css={borderedButton}
-          type="button"
-          onClick={() => {
-            setParams()
-
-            if (inputRef.current) {
-              inputRef.current.value = ''
-            }
-          }}
-        >
-          Reset
-        </Button> */}
       </div>
       {articlesResponse?.results.length ? (
         <Paginator articlesResponse={articlesResponse} />

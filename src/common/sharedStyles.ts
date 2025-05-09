@@ -47,11 +47,10 @@ export const focusMixin = css`
     }
     text-shadow: var(--hover-color) 0px 0 1px;
     color: var(--hover-color);
-    border-color: var(--hover-color);
   }
 
   :active {
-    opacity: 80%;
+    color: var(--active-color);
   }
 `
 
