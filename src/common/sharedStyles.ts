@@ -25,6 +25,14 @@ export const transitionMixin = css`
   }
 `
 
+export const reducedMotionMixin = css`
+  @media (prefers-reduced-motion) {
+    animation: unset;
+    transition: unset;
+    transform: unset;
+  }
+`
+
 export const gradientMixin = css`
   background: linear-gradient(
     90deg,

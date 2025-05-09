@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import {
   centerMixin,
   focusMixin,
+  reducedMotionMixin,
   transitionMixin,
 } from '../common/sharedStyles'
 import { ReactIcon } from '../assets/ReactIcon'
@@ -52,11 +53,8 @@ const cardStyle = css`
 
   &:hover,
   &:focus {
+    ${reducedMotionMixin}
     transform: scale(1.1);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
   }
 `
 

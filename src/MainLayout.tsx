@@ -6,6 +6,7 @@ import { MOBILE_BREAKPOINT, Themes } from './common/theme'
 import { Footer } from './components/Footer'
 import { Moved } from './components/Moved'
 import { Avatar } from './components/Avatar'
+import { reducedMotionMixin } from './common/sharedStyles'
 
 const FOOTER_HEIGHT = '108px'
 const HEADER_HEIGHT = '86px'
@@ -54,6 +55,8 @@ const globalStyles = css`
 `
 
 const sectionStyle = css`
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,6 +69,7 @@ const sectionStyle = css`
   );
   color: var(--light-text-color);
   margin-bottom: 2rem;
+  z-index: 1;
 
   @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 3.5rem 1.5rem;
@@ -104,6 +108,101 @@ const paragraphTextStyle = css`
   }
 `
 
+const heroShapesStyle = css`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: block;
+  z-index: -1;
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px) rotate(2deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px) rotate(5deg);
+      opacity: 0.7;
+    }
+    75% {
+      transform: translateY(-10px) translateX(15px) rotate(2deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.6;
+    }
+  }
+
+  .shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    background: color-mix(in srgb, var(--bg-color) 50%, white 20%);
+    border-radius: 50%;
+    opacity: 0.5;
+    box-shadow: 0 0 8px var(--bg-footer-header);
+  }
+
+  .shape-1 {
+    ${reducedMotionMixin}
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 50px;
+    animation: float 18s infinite ease-in-out;
+  }
+
+  .shape-2 {
+    ${reducedMotionMixin}
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    right: 5%;
+    animation: float 22s infinite ease-in-out reverse;
+  }
+
+  .shape-3 {
+    ${reducedMotionMixin}
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 15%;
+    animation: float 16s infinite ease-in-out 2s;
+  }
+
+  .shape-4 {
+    ${reducedMotionMixin}
+    width: 100px;
+    height: 100px;
+    bottom: 5%;
+    left: 30%;
+    animation: float 20s infinite ease-in-out 1s;
+    @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+      display: none;
+    }
+  }
+
+  .shape-5 {
+    ${reducedMotionMixin}
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    right: 10%;
+    animation: float 24s infinite ease-in-out 3s;
+
+    @media only screen and (max-width: ${MOBILE_BREAKPOINT}) {
+      display: none;
+    }
+  }
+`
+
 export function MainLayout() {
   const { pathname } = useLocation()
 
@@ -118,6 +217,13 @@ export function MainLayout() {
           <Header />
           {pathname === '/' ? (
             <section css={sectionStyle}>
+              <div css={heroShapesStyle}>
+                <div className="shape shape-1"></div>
+                <div className="shape shape-2"></div>
+                <div className="shape shape-3"></div>
+                <div className="shape shape-4"></div>
+                <div className="shape shape-5"></div>
+              </div>
               <div css={avatarWrapperStyle}>
                 <Avatar />
                 <h1 css={headingStyle}>Joe Phelan</h1>

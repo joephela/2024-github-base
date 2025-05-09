@@ -1,6 +1,8 @@
 import { css } from '@emotion/react'
+import { reducedMotionMixin } from '../common/sharedStyles'
 
 const cardStyle = css`
+  ${reducedMotionMixin}
   background: var(--bg-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -11,16 +13,9 @@ const cardStyle = css`
   transition: transform 0.2s ease-in-out;
 
   &:hover {
+    ${reducedMotionMixin}
     transform: translateY(-2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: unset;
   }
 `
 

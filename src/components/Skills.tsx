@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { Pill } from './Pill'
-import { sectionHeader } from '../common/sharedStyles'
+import { reducedMotionMixin, sectionHeader } from '../common/sharedStyles'
 
 const pillWrapperStyle = css`
   display: flex;
@@ -9,6 +9,7 @@ const pillWrapperStyle = css`
 `
 
 const categoryStyle = css`
+  ${reducedMotionMixin}
   margin-bottom: 24px;
   padding: 16px;
   border-radius: 8px;
@@ -19,15 +20,8 @@ const categoryStyle = css`
   border: 1px solid var(--border-color);
 
   &:hover {
+    ${reducedMotionMixin}
     transform: translateY(-2px);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: unset;
   }
 `
 

@@ -3,6 +3,7 @@ import Family from '../assets/family.jpg'
 import { Helmet } from 'react-helmet'
 import {
   centerMixin,
+  reducedMotionMixin,
   sectionHeader,
   transitionMixin,
 } from '../common/sharedStyles'
@@ -50,6 +51,7 @@ const interestsStyle = css`
 `
 
 const interestItemStyle = css`
+  ${reducedMotionMixin}
   margin-bottom: 0;
   background-color: var(--bg-color);
   padding: 25px;
@@ -59,12 +61,9 @@ const interestItemStyle = css`
   border: 2px dashed var(--bg-accent);
 
   &:hover {
+    ${reducedMotionMixin}
     transform: scale(1.03);
     border-style: solid;
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
   }
 
   & strong {
@@ -81,10 +80,6 @@ const interestItemStyle = css`
       left: 0;
       color: var(--bg-accent);
     }
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: unset;
   }
 `
 

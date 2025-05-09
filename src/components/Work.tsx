@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { MOBILE_BREAKPOINT } from '../common/theme'
-import { sectionHeader } from '../common/sharedStyles'
+import { reducedMotionMixin, sectionHeader } from '../common/sharedStyles'
 
 const resumeContainer = css`
   width: 100%;
@@ -19,6 +19,7 @@ const experienceContainer = css`
 `
 
 const experienceCard = css`
+  ${reducedMotionMixin}
   border-radius: 12px;
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -27,16 +28,9 @@ const experienceCard = css`
     box-shadow 0.3s ease;
 
   &:hover {
+    ${reducedMotionMixin}
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: unset;
   }
 `
 
@@ -98,6 +92,7 @@ const workDutyListStyle = css`
 `
 
 const educationStyle = css`
+  ${reducedMotionMixin}
   background-color: rgba(var(--bg-accent-rgb, 72, 102, 102), 0.08);
   padding: 30px;
   border-radius: 16px;
@@ -111,12 +106,9 @@ const educationStyle = css`
     box-shadow 0.3s ease;
 
   &:hover {
+    ${reducedMotionMixin}
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-
-    @media (prefers-reduced-motion) {
-      transform: unset;
-    }
   }
 
   &:after {
@@ -125,10 +117,6 @@ const educationStyle = css`
     top: 0px;
     right: 8px;
     font-size: 40px;
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: unset;
   }
 `
 
