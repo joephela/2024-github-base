@@ -46,14 +46,6 @@ export function AcquiaProjects() {
       />
 
       <Card
-        imageSrc="/infillify.png"
-        imageAlt="Infillify application"
-        title="Infillify"
-        description="An AI image editor you can use to add or remove objects from your photos."
-        link={{ href: 'https://www.infillify.com', text: 'Visit Infillify' }}
-      />
-
-      <Card
         imageSrc="/kindness.jpg"
         imageAlt="Kindness Task application"
         title="Kindness Task"
