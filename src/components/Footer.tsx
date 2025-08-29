@@ -40,7 +40,7 @@ export function Footer() {
         >
           Check out the code!
         </a>
-        <p>Copyright © 2024 Joseph Phelan.</p>
+        <p>Copyright © 2025 Joseph Phelan.</p>
       </div>
       <SocialLinks />
     </footer>
