@@ -1,7 +1,7 @@
 {
   "name": "2024-github-base",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "deploy": "yarn build && yarn lint && cp vercel.json dist/vercel.json &&  gh-pages --dotfiles -d dist -b main --repo https://github.com/joephela/joephela.github.io.git",
