@@ -9,7 +9,7 @@ const SocialLinksContainer = css`
   padding: 10px;
 `
 
-const LINKEDIN_URL = 'https://linkedin.com/in/joseph-phelan-3a871625'
+const LINKEDIN_URL = 'https://linkedin.com/in/joephela'
 const GITHUB_URL = 'https://github.com/joephela'
 
 export function SocialLinks() {
