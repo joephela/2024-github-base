@@ -44,17 +44,6 @@ export function AcquiaProjects() {
           text: 'Visit Acquia DAM',
         }}
       />
-
-      <Card
-        imageSrc="/kindness.jpg"
-        imageAlt="Kindness Task application"
-        title="Kindness Task"
-        description="A daily task manager to help you achieve your daily goals."
-        link={{
-          href: 'https://www.kindnesstask.com',
-          text: 'Visit Kindness Task',
-        }}
-      />
     </div>
   )
 }
