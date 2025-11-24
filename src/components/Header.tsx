@@ -68,7 +68,6 @@ const menuButtonStyle = css`
 export function Header() {
   return (
     <header css={headerWrapperStyle}>
-      React
       <Link to="/" css={linkStyle}>
         <span css={imageHeaderStyle}>
           <img
