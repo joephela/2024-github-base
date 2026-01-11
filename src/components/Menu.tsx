@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { Button } from './Button'
 import { MenuIcon } from '../assets/MenuIcon'
 import { Nav } from './Nav'
@@ -38,12 +38,13 @@ const closeButtonStyle = css`
 export function Menu() {
   const [isOpen, setIsOpen] = useState(false)
   const { pathname } = useLocation()
+  const [prevPathname, setPrevPathname] = useState(pathname)
   const ref = useRef<HTMLButtonElement>(null)
 
-  //whenever we navigate, close the menu
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
     setIsOpen(false)
-  }, [pathname])
+  }
 
   return (
     <Fragment>

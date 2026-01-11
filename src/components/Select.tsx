@@ -123,7 +123,7 @@ export function Select({
         e.preventDefault()
       }
     },
-    [options.length],
+    [],
   )
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
