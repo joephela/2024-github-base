@@ -8,6 +8,7 @@ import { Tech } from './routes/Tech'
 import { Error } from './routes/Error'
 import { News } from './routes/News'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { HelmetProvider } from 'react-helmet-async'
 
 function App() {
   const queryClient = new QueryClient()
@@ -45,9 +46,11 @@ function App() {
   }, [])
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </HelmetProvider>
   )
 }
 

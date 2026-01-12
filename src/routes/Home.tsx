@@ -6,7 +6,7 @@ import {
   sectionHeader,
   transitionMixin,
 } from '../common/sharedStyles'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { useFadeTransition } from '../hooks/useFadeTransition'
 import { AcquiaProjects } from '../components/AcquiaProjects'
 import { Work } from '../components/Work'

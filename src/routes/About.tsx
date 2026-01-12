@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import Family from '../assets/family.jpg'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import {
   centerMixin,
   reducedMotionMixin,
