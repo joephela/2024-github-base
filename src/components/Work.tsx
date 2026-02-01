@@ -29,7 +29,6 @@ const experienceCard = css`
 
   &:hover {
     ${reducedMotionMixin}
-    transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
   }
 `
@@ -41,16 +40,19 @@ const companyHeader = css`
   font-size: 1.5rem;
   font-weight: bold;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`
 
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 20px;
-    height: 20px;
-    background-color: var(--bg-accent);
+const companyLogoStyle = css`
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+
+  body.dark & {
+    filter: brightness(0);
   }
 `
 
@@ -107,7 +109,6 @@ const educationStyle = css`
 
   &:hover {
     ${reducedMotionMixin}
-    transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
   }
 
@@ -145,11 +146,64 @@ export function Work() {
 
       <div css={experienceContainer}>
         <div css={experienceCard}>
-          <div css={companyHeader}>Acquia</div>
+          <div css={companyHeader}>
+            <a
+              href="https://www.akidolabs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                display: 'flex',
+              }}
+              aria-label="Akido Labs website"
+            >
+              <img src="/akido.svg" alt="Akido Labs" css={companyLogoStyle} />
+            </a>
+          </div>
+          <div css={roleContainer}>
+            <div css={workTitleStyle}>
+              <span>Senior Software Engineer</span>
+              <span>Jan 2026 - Present</span>
+            </div>
+            <ul css={workDutyListStyle}>
+              <li>
+                Focus on creating scalable systems that integrate clinical data,
+                AI inference pipelines, and patient interfaces to enable doctors
+                to deliver faster, more accurate care
+              </li>
+              <li>
+                Contribute to projects from concept to production in a
+                fast-paced environment where technology and clinical operations
+                work in tight feedback loops
+              </li>
+              <li>
+                Work at the intersection of healthcare and AI to help address
+                America's physician shortage and make exceptional care universal
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div css={experienceCard}>
+          <div css={companyHeader}>
+            <a
+              href="https://www.acquia.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                display: 'flex',
+              }}
+              aria-label="Acquia website"
+            >
+              <img src="/acquia.svg" alt="Acquia" css={companyLogoStyle} />
+            </a>
+          </div>
           <div css={roleContainer}>
             <div css={workTitleStyle}>
               <span>Staff Software Engineer</span>
-              <span>Feb 2024 - Present</span>
+              <span>Feb 2024 - Jan 2026</span>
             </div>
             <ul css={workDutyListStyle}>
               <li>Maintain cross team component library and documentation</li>
@@ -227,7 +281,28 @@ export function Work() {
 
         <div css={experienceCard}>
           <div css={companyHeader}>
-            Nelnet (formerly Great Lakes Higher Education)
+            <a
+              href="https://www.nelnet.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                display: 'flex',
+              }}
+              aria-label="Nelnet website"
+            >
+              <img
+                src="/nelnet.svg"
+                alt="Nelnet"
+                css={[
+                  companyLogoStyle,
+                  css`
+                    height: 42px;
+                  `,
+                ]}
+              />
+            </a>
           </div>
           <div css={roleContainer}>
             <div css={workTitleStyle}>

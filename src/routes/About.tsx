@@ -105,12 +105,12 @@ export function AboutMe() {
         professional career.
       </p>
       <p>
-        Today I work as a staff software engineer at{' '}
-        <a href="https://www.acquia.com/products/acquia-dam">Acquia</a>{' '}
-        specializing in front end. I have a wonderful wife and 2 boys that I
-        enjoy spending as much time with as possible. When I'm not working I
-        enjoy biking, listening to podcasts and audio books, playing video
-        games, reading books, fishing, and gardening.
+        Today I work as a senior software engineer at{' '}
+        <a href="https://www.akidolabs.com/">Akido Labs</a> specializing in
+        healthcare and AI. I have a wonderful wife and 2 boys that I enjoy
+        spending as much time with as possible. When I'm not working I enjoy
+        biking, listening to podcasts and audio books, playing video games,
+        reading books, fishing, and gardening.
       </p>
 
       <p>

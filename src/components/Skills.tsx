@@ -18,11 +18,6 @@ const categoryStyle = css`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out;
   border: 1px solid var(--border-color);
-
-  &:hover {
-    ${reducedMotionMixin}
-    transform: translateY(-2px);
-  }
 `
 
 const categoryHeaderStyle = css`

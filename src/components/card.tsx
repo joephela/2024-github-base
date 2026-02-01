@@ -14,7 +14,6 @@ const cardStyle = css`
 
   &:hover {
     ${reducedMotionMixin}
-    transform: translateY(-2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `
